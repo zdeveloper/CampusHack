@@ -15,7 +15,7 @@ import mobi.uta.campussynergy.R;
 /**
  * Created by James_Motha_Fucka on 2/7/15.
  */
-public class LoginLikesFragment extends Fragment{
+public class LoginLikesFragment extends Fragment {
 
     ArrayList<Boolean> picked;
     ImageButton buttonGreekLife, buttonTech, buttonAcademics, buttonReligion, buttonStudyGroups, buttonMusic;
@@ -25,6 +25,7 @@ public class LoginLikesFragment extends Fragment{
 
         @Override
         public void onClick(View v) {
+<<<<<<< HEAD
             switch(v.getId()) {
                 case R.id.button1:
                     toggle(0);
@@ -47,10 +48,14 @@ public class LoginLikesFragment extends Fragment{
 
                     break;
             }
+=======
+            //
+>>>>>>> FETCH_HEAD
         }
     };
 
-    public LoginLikesFragment() {}
+    public LoginLikesFragment() {
+    }
 
     public static LoginLikesFragment newInstance() {
         return new LoginLikesFragment();
@@ -63,6 +68,7 @@ public class LoginLikesFragment extends Fragment{
     }
 
     @Override
+<<<<<<< HEAD
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         picked = new ArrayList<>();
@@ -74,6 +80,9 @@ public class LoginLikesFragment extends Fragment{
         picked.add(Boolean.FALSE);
         picked.add(Boolean.FALSE);
 
+=======
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+>>>>>>> FETCH_HEAD
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
         buttonGreekLife = (ImageButton) root.findViewById(R.id.button1);
         buttonTech = (ImageButton) root.findViewById(R.id.button2);

@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import mobi.uta.campussynergy.R;
+
 /**
  * Created by zedd on 2/7/15.
  */
@@ -25,7 +27,10 @@ public class ViewPageFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_view_page, container, false);
+        View view = inflater.inflate(R.layout.fragment_view_page, container, false);
+
+
+        return view;
     }
 
 
