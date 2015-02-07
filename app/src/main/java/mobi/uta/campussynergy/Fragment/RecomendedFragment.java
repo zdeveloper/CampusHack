@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import mobi.uta.campussynergy.R;
+
 
 public class RecomendedFragment extends Fragment {
 

@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import mobi.uta.campussynergy.R;
+
 /**
  * Created by zedd on 2/7/15.
  */
