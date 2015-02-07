@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -34,7 +33,7 @@ public class MapViewFragment extends Fragment implements OnMapReadyCallback {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_map, container, false);
 
-        map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
+        //map = ((MapFragment) getFragmentManager().findFragmentById(R.id.map)).getMap();
 
         return view;
     }

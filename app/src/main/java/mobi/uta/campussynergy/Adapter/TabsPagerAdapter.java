@@ -1,17 +1,18 @@
 package mobi.uta.campussynergy.Adapter;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.support.v13.app.FragmentStatePagerAdapter;
 
 import mobi.uta.campussynergy.Fragment.MapViewFragment;
 import mobi.uta.campussynergy.Fragment.RecomendedFragment;
 import mobi.uta.campussynergy.Fragment.ViewEventFragment;
+import mobi.uta.campussynergy.Fragment.ViewPageFragment;
 
 /**
  * Created by zedd on 2/7/15.
  */
-public class TabsPagerAdapter extends FragmentPagerAdapter {
+public class TabsPagerAdapter extends FragmentStatePagerAdapter {
 
     public TabsPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -26,7 +27,7 @@ public class TabsPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 return new ViewEventFragment();
             case 2:
-                return new MapViewFragment();
+                return new ViewPageFragment();
         }
 
         return null;

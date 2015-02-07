@@ -1,6 +1,5 @@
 package mobi.uta.campussynergy.Activity;
 
-
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -32,7 +31,7 @@ public class MainActivity extends ActionBarActivity implements
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
         actionBar = getSupportActionBar();
-        mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
+        mAdapter = new TabsPagerAdapter( getFragmentManager());
 
         if(actionBar == null){
             Log.d("tag", "actionbar is null");
@@ -103,7 +102,9 @@ public class MainActivity extends ActionBarActivity implements
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction fragmentTransaction) {
-
+        // on tab selected
+        // show respected fragment view
+        viewPager.setCurrentItem(tab.getPosition());
     }
 
     @Override
