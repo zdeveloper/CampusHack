@@ -1,6 +1,11 @@
 package mobi.uta.campussynergy.Activity;
 
+<<<<<<< Updated upstream
 import android.content.Intent;
+=======
+
+import android.app.ListFragment;
+>>>>>>> Stashed changes
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -46,9 +51,8 @@ public class MainActivity extends ActionBarActivity implements
                     .setTabListener(this));
         }
 
-        loginFrag = LoginLikesFragment.newInstance();
         getFragmentManager().beginTransaction()
-                .replace(R.id.main_container, loginFrag)
+                .replace(R.id.container, new ListFragment())
                 .commit();
 
 

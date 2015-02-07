@@ -1,14 +1,19 @@
 package mobi.uta.campussynergy.Fragment;
 
-import android.app.Fragment;
+
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
 
+import mobi.uta.campussynergy.Activity.MainActivity;
 import mobi.uta.campussynergy.R;
 
 /**
@@ -19,6 +24,8 @@ public class LoginLikesFragment extends Fragment {
     ArrayList<Boolean> picked;
     ImageButton buttonGreekLife, buttonTech, buttonAcademics, buttonReligion, buttonStudyGroups, buttonMusic;
     View mOverlay;
+    private Context context;
+
     public View.OnClickListener clicky = new View.OnClickListener() {
 
 
@@ -43,10 +50,26 @@ public class LoginLikesFragment extends Fragment {
                     break;
                 case R.id.button6:
                     toggle(5);
+                    break;
 
+                case R.id.button_back:
+                        getActivity().getSupportFragmentManager().beginTransaction()
+                                .replace(R.id.container, new LoginInfoFragment())
+                                .commit();
+                    break;
+                case R.id.button_next:
+                    if(isInfoValidated()) {
+                        Intent i = new Intent(context, MainActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i);
+                        getActivity().finish();
+                    }
                     break;
             }
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
         }
     };
 
@@ -57,6 +80,7 @@ public class LoginLikesFragment extends Fragment {
         return new LoginLikesFragment();
     }
 
+<<<<<<< Updated upstream
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,9 +89,12 @@ public class LoginLikesFragment extends Fragment {
 
 
     @Override
+=======
+>>>>>>> Stashed changes
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
+        context = root.getContext();
 
         picked = new ArrayList<>();
 
@@ -78,6 +105,15 @@ public class LoginLikesFragment extends Fragment {
         picked.add(Boolean.FALSE);
         picked.add(Boolean.FALSE);
 
+<<<<<<< Updated upstream
+=======
+        Button bNext = (Button) root.findViewById(R.id.button_next);
+        Button bBack = (Button) root.findViewById(R.id.button_back);
+
+        bNext.setOnClickListener(clicky);
+        bBack.setOnClickListener(clicky);
+
+>>>>>>> Stashed changes
         buttonGreekLife = (ImageButton) root.findViewById(R.id.button1);
         buttonTech = (ImageButton) root.findViewById(R.id.button2);
         buttonAcademics = (ImageButton) root.findViewById(R.id.button3);
@@ -115,6 +151,10 @@ public class LoginLikesFragment extends Fragment {
         return picked;
     }
 
+    private boolean isInfoValidated() {
+        //Fix dis shit
+        return true;
+    }
 
 
 }

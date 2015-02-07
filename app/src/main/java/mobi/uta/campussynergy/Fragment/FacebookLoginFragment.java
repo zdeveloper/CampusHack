@@ -73,8 +73,9 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_skip:
-                Intent i = new Intent(context, MainActivity.class);
-                startActivity(i);
+                getActivity().getSupportFragmentManager().beginTransaction()
+                    .replace(R.id.container, new LoginInfoFragment())
+                    .commit();
                 break;
         }
     }

@@ -11,4 +11,9 @@
         <item name="android:background">@drawable/actionbar_bg</item>
     </style>
 
+    <style name="LoginInfoButton" parent="android:Widget.Button">
+        <item name="android:background">@drawable/button_login_info</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
 </resources>

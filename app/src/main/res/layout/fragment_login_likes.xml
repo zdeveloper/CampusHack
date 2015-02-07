@@ -1,128 +1,169 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-android:layout_width="match_parent"
-android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-<LinearLayout
-    android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:padding="@dimen/activity_horizontal_margin">
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Your Interests"
-        android:textSize="26sp"
-        style="?android:attr/listSeparatorTextViewStyle"
-        android:id="@+id/textView" />
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:padding="@dimen/activity_horizontal_margin">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your Interests"
+                    android:textSize="26sp"
+                    style="?android:attr/listSeparatorTextViewStyle"
+                    android:id="@+id/textView" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_horizontal_margin"
+                    android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                    <ImageButton android:id="@+id/button1"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton android:id="@+id/button2"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton android:id="@+id/button3"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                    <ImageButton android:id="@+id/button4"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton android:id="@+id/button5"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton android:id="@+id/button6"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                    <ImageButton android:id="@+id/button7"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton android:id="@+id/button8"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton android:id="@+id/button9"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="@dimen/activity_horizontal_margin">
+
+                    <ImageButton android:id="@+id/button10"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton android:id="@+id/button11"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                    <ImageButton android:id="@+id/button12"
+                        android:src="@drawable/ic_launcher"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout>
 
     <LinearLayout
         android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingTop="@dimen/activity_horizontal_margin"
-        android:paddingBottom="@dimen/activity_horizontal_margin">
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-        <ImageButton android:id="@+id/button1"
-            android:src="@drawable/ic_launcher"
+        <Button
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="match_parent"/>
+            android:text="Back"
+            android:background="@drawable/button_login_info"
+            android:textColor="@android:color/white"
+            android:id="@+id/button_back" />
 
-        <ImageButton android:id="@+id/button2"
-            android:src="@drawable/ic_launcher"
+        <View
+            android:layout_width="1dp"
+            android:layout_height="fill_parent"
+            android:background="@color/divider" />
+
+        <Button
             android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-        <ImageButton android:id="@+id/button3"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
+            android:text="Finish"
+            android:background="@drawable/button_login_info"
+            android:textColor="@android:color/white"
+            android:id="@+id/button_next" />
     </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_horizontal_margin">
-
-        <ImageButton android:id="@+id/button4"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-        <ImageButton android:id="@+id/button5"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-        <ImageButton android:id="@+id/button6"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_horizontal_margin">
-
-        <ImageButton android:id="@+id/button7"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-        <ImageButton android:id="@+id/button8"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-        <ImageButton android:id="@+id/button9"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="@dimen/activity_horizontal_margin">
-
-        <ImageButton android:id="@+id/button10"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-        <ImageButton android:id="@+id/button11"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-        <ImageButton android:id="@+id/button12"
-            android:src="@drawable/ic_launcher"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="match_parent"/>
-
-    </LinearLayout>
-
-
 </LinearLayout>
-</ScrollView>
