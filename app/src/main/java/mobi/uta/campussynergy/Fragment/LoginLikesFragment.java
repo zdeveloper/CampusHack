@@ -47,7 +47,6 @@ public class LoginLikesFragment extends Fragment {
                     break;
             }
 
-
         }
     };
 
@@ -81,6 +80,7 @@ public class LoginLikesFragment extends Fragment {
 
 
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
+
         buttonGreekLife = (ImageButton) root.findViewById(R.id.button1);
         buttonTech = (ImageButton) root.findViewById(R.id.button2);
         buttonAcademics = (ImageButton) root.findViewById(R.id.button3);
