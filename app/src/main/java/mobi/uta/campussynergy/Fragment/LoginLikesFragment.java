@@ -3,7 +3,6 @@ package mobi.uta.campussynergy.Fragment;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -13,7 +12,7 @@ import mobi.uta.campussynergy.R;
 /**
  * Created by Cameron on 2/7/15.
  */
-public class LoginLikesFragment extends Fragment{
+public class LoginLikesFragment extends Fragment {
 
     Button mButton1, mButton2;
     View mOverlay;
@@ -22,9 +21,10 @@ public class LoginLikesFragment extends Fragment{
         public void onClick(View v) {
 
         }
-    }
+    };
 
-    public LoginLikesFragment() {}
+    public LoginLikesFragment() {
+    }
 
     public static LoginLikesFragment newInstance() {
         return new LoginLikesFragment();
@@ -37,8 +37,7 @@ public class LoginLikesFragment extends Fragment{
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
         mButton1 = (Button) root.findViewById(R.id.button1);
         mButton2 = (Button) root.findViewById(R.id.button2);
