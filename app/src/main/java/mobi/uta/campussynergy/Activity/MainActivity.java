@@ -6,6 +6,8 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
 import mobi.uta.campussynergy.Fragment.LoginLikesFragment;
@@ -76,6 +78,26 @@ public class MainActivity extends ActionBarActivity implements
             public void onPageScrollStateChanged(int arg0) {
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                return true;
+            case R.id.action_qr:
+                return true;
+            case R.id.action_map_view:
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 
