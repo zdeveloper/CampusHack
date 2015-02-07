@@ -78,9 +78,6 @@ public class LoginLikesFragment extends Fragment {
         picked.add(Boolean.FALSE);
         picked.add(Boolean.FALSE);
 
-
-        View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
-
         buttonGreekLife = (ImageButton) root.findViewById(R.id.button1);
         buttonTech = (ImageButton) root.findViewById(R.id.button2);
         buttonAcademics = (ImageButton) root.findViewById(R.id.button3);
