@@ -7,13 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import mobi.uta.campussynergy.R;
 
 /**
- * Created by James_Motha_Fucka on 2/7/15.
+ * Created by Jamesmothafucka on 2/7/15.
  */
 public class LoginLikesFragment extends Fragment {
 
@@ -47,6 +46,10 @@ public class LoginLikesFragment extends Fragment {
 
                     break;
             }
+<<<<<<< HEAD
+=======
+
+>>>>>>> FETCH_HEAD
         }
     };
 
@@ -63,11 +66,17 @@ public class LoginLikesFragment extends Fragment {
 
     }
 
+<<<<<<< HEAD
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
 
+=======
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+>>>>>>> FETCH_HEAD
         picked = new ArrayList<>();
 
         picked.add(Boolean.FALSE);
@@ -77,6 +86,10 @@ public class LoginLikesFragment extends Fragment {
         picked.add(Boolean.FALSE);
         picked.add(Boolean.FALSE);
 
+<<<<<<< HEAD
+=======
+        View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
+>>>>>>> FETCH_HEAD
         buttonGreekLife = (ImageButton) root.findViewById(R.id.button1);
         buttonTech = (ImageButton) root.findViewById(R.id.button2);
         buttonAcademics = (ImageButton) root.findViewById(R.id.button3);
