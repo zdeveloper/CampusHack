@@ -16,8 +16,6 @@ import mobi.uta.campussynergy.R;
 public class MainActivity extends ActionBarActivity implements
         ActionBar.TabListener {
 
-    
-
     private ViewPager viewPager;
     private TabsPagerAdapter mAdapter;
     private ActionBar actionBar;
