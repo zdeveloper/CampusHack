@@ -66,10 +66,7 @@ public class LoginLikesFragment extends Fragment {
                     }
                     break;
             }
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
         }
     };
 
@@ -80,7 +77,6 @@ public class LoginLikesFragment extends Fragment {
         return new LoginLikesFragment();
     }
 
-<<<<<<< Updated upstream
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -89,8 +85,6 @@ public class LoginLikesFragment extends Fragment {
 
 
     @Override
-=======
->>>>>>> Stashed changes
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
@@ -105,15 +99,12 @@ public class LoginLikesFragment extends Fragment {
         picked.add(Boolean.FALSE);
         picked.add(Boolean.FALSE);
 
-<<<<<<< Updated upstream
-=======
         Button bNext = (Button) root.findViewById(R.id.button_next);
         Button bBack = (Button) root.findViewById(R.id.button_back);
 
         bNext.setOnClickListener(clicky);
         bBack.setOnClickListener(clicky);
 
->>>>>>> Stashed changes
         buttonGreekLife = (ImageButton) root.findViewById(R.id.button1);
         buttonTech = (ImageButton) root.findViewById(R.id.button2);
         buttonAcademics = (ImageButton) root.findViewById(R.id.button3);
