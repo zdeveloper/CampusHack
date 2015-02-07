@@ -22,6 +22,7 @@ import com.facebook.widget.LoginButton;
 
 import java.util.Arrays;
 
+import mobi.uta.campussynergy.Activity.MainActivity;
 import mobi.uta.campussynergy.R;
 
 /**
@@ -50,6 +51,7 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login_facebook, container, false);
+        context = view.getContext();
 
         LoginButton authButton = (LoginButton) view.findViewById(R.id.button_auth_facebook);
         authButton.setReadPermissions(Arrays.asList("user_friends"));
@@ -68,7 +70,8 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.button_skip:
-                //next
+                Intent i = new Intent(context, MainActivity.class);
+                startActivity(i);
                 break;
         }
     }

@@ -19,7 +19,7 @@ public class LoginLikesFragment extends Fragment {
     public View.OnClickListener clicky = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
+            //
         }
     };
 
