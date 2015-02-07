@@ -3,13 +3,16 @@ package mobi.uta.campussynergy.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.Request;
 import com.facebook.RequestBatch;
@@ -126,15 +129,23 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
                         requestId, null, null, new Request.Callback() {
                     public void onCompleted(Response response) {
                         GraphObject graphObject = response.getGraphObject();
-                        String s = tv.getText().toString();
+                        String s = "";
                         if (graphObject != null) {
                             if (graphObject.getProperty("id") != null) {
-                                s = s + String.format("%s: %s\n",
-                                        graphObject.getProperty("id"),
-                                        graphObject.getProperty("name"));
+                                s = String.format("%s",
+                                        graphObject.getProperty("id"));
                             }
                         }
-                        tv.setText(s);
+                        SharedPreferences prefs = getActivity().getPreferences(Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = prefs.edit();
+                        editor.putString(getResources().getString(R.string.pref_facebook_id), s);
+                        editor.commit();
+
+                        Intent i = new Intent(context, MainActivity.class);
+                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(i);
+                        getActivity().finish();
+
                     }
                 }));
             }

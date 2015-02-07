@@ -1,22 +1,128 @@
-<FrameLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.me.testapplication.Buttons">
+<?xml version="1.0" encoding="utf-8"?>
 
-    <Button android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lorem_ipsum"/>
-    <Button android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/lorem"
-        android:alpha="0.4"/>
-    <Button android:id="@+id/overlay"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+android:layout_width="match_parent"
+android:layout_height="wrap_content">
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:padding="@dimen/activity_horizontal_margin">
+
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0"/>
+        android:layout_height="wrap_content"
+        android:text="Your Interests"
+        android:textSize="26sp"
+        style="?android:attr/listSeparatorTextViewStyle"
+        android:id="@+id/textView" />
 
-</FrameLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/activity_horizontal_margin"
+        android:paddingBottom="@dimen/activity_horizontal_margin">
+
+        <ImageButton android:id="@+id/button1"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <ImageButton android:id="@+id/button2"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <ImageButton android:id="@+id/button3"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_horizontal_margin">
+
+        <ImageButton android:id="@+id/button4"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <ImageButton android:id="@+id/button5"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <ImageButton android:id="@+id/button6"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_horizontal_margin">
+
+        <ImageButton android:id="@+id/button7"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <ImageButton android:id="@+id/button8"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <ImageButton android:id="@+id/button9"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/activity_horizontal_margin">
+
+        <ImageButton android:id="@+id/button10"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <ImageButton android:id="@+id/button11"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+        <ImageButton android:id="@+id/button12"
+            android:src="@drawable/ic_launcher"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>
