@@ -1,17 +1,17 @@
 package mobi.uta.campussynergy.Activity;
 
-import android.app.ActionBar;
-import android.app.ActionBar.Tab;
-import android.app.FragmentTransaction;
+
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
 import mobi.uta.campussynergy.Fragment.LoginLikesFragment;
 import mobi.uta.campussynergy.R;
 
-public class MainActivity extends FragmentActivity implements
+public class MainActivity extends ActionBarActivity implements
         ActionBar.TabListener {
 
     private ViewPager viewPager;
@@ -20,7 +20,7 @@ public class MainActivity extends FragmentActivity implements
     private LoginLikesFragment loginFrag;
 
     // Tab titles
-    private String[] tabs = {"Top Rated", "Games", "Movies"};
+    private String[] tabs = {"Recommended", "Main", "Friends"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,13 +29,20 @@ public class MainActivity extends FragmentActivity implements
 
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
-        actionBar = getActionBar();
+        actionBar = getSupportActionBar();
         mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
 
+        if(actionBar == null){
+            Log.d("tag", "actionbar is null");
+        } else {
+            Log.d("tag", "actionbar is not null");
+        }
 
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);
-        //actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+
+
 
         // Adding Tabs
         for (String tab_name : tabs) {
@@ -71,23 +78,19 @@ public class MainActivity extends FragmentActivity implements
         });
     }
 
+
     @Override
-    public void onTabReselected(Tab tab, FragmentTransaction ft) {
+    public void onTabSelected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction fragmentTransaction) {
+
     }
 
     @Override
-    public void onTabSelected(Tab tab, FragmentTransaction ft) {
-        // on tab selected
-        // show respected fragment view
-        viewPager.setCurrentItem(tab.getPosition());
+    public void onTabUnselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction fragmentTransaction) {
+
     }
 
     @Override
-    public void onTabUnselected(Tab tab, FragmentTransaction ft) {
+    public void onTabReselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction fragmentTransaction) {
+
     }
-
-
-
-
-
 }
