@@ -29,7 +29,7 @@ public class MainActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        printKeyHash(this);
+        Log.v("test", "LOGIN");
 
 
         if (savedInstanceState == null) {

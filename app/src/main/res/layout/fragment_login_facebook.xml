@@ -5,8 +5,21 @@
     android:padding="@dimen/activity_horizontal_margin"
     android:background="#FF65EE">
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:id="@+id/tv_temp" />
+
+    <com.facebook.widget.LoginButton
+        android:id="@+id/button_auth_facebook"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp" />
+
+    <Button
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Skip"
         android:background="@drawable/button_skip"
