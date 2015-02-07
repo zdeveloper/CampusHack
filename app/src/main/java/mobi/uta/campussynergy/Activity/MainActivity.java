@@ -1,5 +1,6 @@
 package mobi.uta.campussynergy.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -32,12 +33,6 @@ public class MainActivity extends ActionBarActivity implements
         viewPager = (ViewPager) findViewById(R.id.pager);
         actionBar = getSupportActionBar();
         mAdapter = new TabsPagerAdapter( getFragmentManager());
-
-        if(actionBar == null){
-            Log.d("tag", "actionbar is null");
-        } else {
-            Log.d("tag", "actionbar is not null");
-        }
 
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);
@@ -93,6 +88,8 @@ public class MainActivity extends ActionBarActivity implements
             case R.id.action_qr:
                 return true;
             case R.id.action_map_view:
+                Intent i = new Intent(this, MapActivity.class);
+                startActivity(i);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
