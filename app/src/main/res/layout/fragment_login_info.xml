@@ -3,8 +3,6 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<<<<<<< Updated upstream
-=======
 
     <LinearLayout
         android:orientation="vertical"
@@ -61,5 +59,4 @@
             android:textColor="@android:color/white"
             android:id="@+id/button_next" />
     </LinearLayout>
->>>>>>> Stashed changes
 </LinearLayout>
