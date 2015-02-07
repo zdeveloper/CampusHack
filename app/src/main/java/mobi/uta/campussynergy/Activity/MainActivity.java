@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
 
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
+import mobi.uta.campussynergy.Fragment.LoginLikesFragment;
 import mobi.uta.campussynergy.R;
 
 public class MainActivity extends FragmentActivity implements
@@ -16,6 +17,8 @@ public class MainActivity extends FragmentActivity implements
     private ViewPager viewPager;
     private TabsPagerAdapter mAdapter;
     private ActionBar actionBar;
+    private LoginLikesFragment loginFrag;
+
     // Tab titles
     private String[] tabs = {"Top Rated", "Games", "Movies"};
 
@@ -39,6 +42,12 @@ public class MainActivity extends FragmentActivity implements
             actionBar.addTab(actionBar.newTab().setText(tab_name)
                     .setTabListener(this));
         }
+
+        loginFrag = LoginLikesFragment.newInstance();
+        getFragmentManager().beginTransaction()
+                .replace(R.id.main_container, loginFrag)
+                .commit();
+
 
         /**
          * on swiping the viewpager make respective tab selected

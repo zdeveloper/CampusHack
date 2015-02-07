@@ -13,10 +13,16 @@ import mobi.uta.campussynergy.R;
 /**
  * Created by Cameron on 2/7/15.
  */
-public class LoginLikesFragment extends Fragment {
+public class LoginLikesFragment extends Fragment{
 
     Button mButton1, mButton2;
     View mOverlay;
+    public View.OnClickListener clicky = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+
+        }
+    }
 
     public LoginLikesFragment() {}
 
@@ -37,6 +43,9 @@ public class LoginLikesFragment extends Fragment {
         mButton1 = (Button) root.findViewById(R.id.button1);
         mButton2 = (Button) root.findViewById(R.id.button2);
         mOverlay = root.findViewById(R.id.overlay);
+
+        mButton1.setOnClickListener(clicky);
+        mButton2.setOnClickListener(clicky);
         return root;
     }
 
@@ -44,20 +53,4 @@ public class LoginLikesFragment extends Fragment {
         return mOverlay;
     }
 
-    public String hitTest(MotionEvent event) {
-        float x = event.getX();
-        float y = event.getY();
-
-        if (x > mButton1.getLeft() && mButton1.getRight() > x &&
-                y > mButton1.getTop() && mButton1.getBottom() > y)
-        {
-            return "Button 1";
-        } else if (x > mButton2.getLeft() && mButton2.getRight() > x &&
-                y > mButton2.getTop() && mButton2.getBottom() > y)
-        {
-            return "Button 2";
-        } else {
-            return "None";
-        }
-    }
 }
