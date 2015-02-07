@@ -11,4 +11,7 @@
     <string name="facebook_app_id">1521984621398779</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="app_prefs">app_prefs</string>
+    <string name="pref_facebook_id">facebook_id</string>
+
 </resources>

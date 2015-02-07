@@ -25,7 +25,6 @@ public class LoginLikesFragment extends Fragment {
 
         @Override
         public void onClick(View v) {
-<<<<<<< HEAD
             switch(v.getId()) {
                 case R.id.button1:
                     toggle(0);
@@ -48,9 +47,6 @@ public class LoginLikesFragment extends Fragment {
 
                     break;
             }
-=======
-            //
->>>>>>> FETCH_HEAD
         }
     };
 
@@ -67,10 +63,11 @@ public class LoginLikesFragment extends Fragment {
 
     }
 
-    @Override
-<<<<<<< HEAD
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
+        View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
+
         picked = new ArrayList<>();
 
         picked.add(Boolean.FALSE);
@@ -80,10 +77,6 @@ public class LoginLikesFragment extends Fragment {
         picked.add(Boolean.FALSE);
         picked.add(Boolean.FALSE);
 
-=======
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
->>>>>>> FETCH_HEAD
-        View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
         buttonGreekLife = (ImageButton) root.findViewById(R.id.button1);
         buttonTech = (ImageButton) root.findViewById(R.id.button2);
         buttonAcademics = (ImageButton) root.findViewById(R.id.button3);
