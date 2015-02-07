@@ -1,6 +1,15 @@
 package mobi.uta.campussynergy.Fragment;
 
 import android.app.Fragment;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+import mobi.uta.campussynergy.R;
 
 /**
  * Created by Cameron on 2/7/15.
@@ -10,10 +19,10 @@ public class LoginLikesFragment extends Fragment {
     Button mButton1, mButton2;
     View mOverlay;
 
-    public Buttons() {}
+    public LoginLikesFragment() {}
 
-    public static Buttons newInstance() {
-        return new Buttons();
+    public static LoginLikesFragment newInstance() {
+        return new LoginLikesFragment();
     }
 
     @Override
@@ -25,14 +34,13 @@ public class LoginLikesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_buttons, container, false);
+        View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
         mButton1 = (Button) root.findViewById(R.id.button1);
         mButton2 = (Button) root.findViewById(R.id.button2);
         mOverlay = root.findViewById(R.id.overlay);
         return root;
     }
 
-    @Nullable
     public View getOverlay() {
         return mOverlay;
     }
