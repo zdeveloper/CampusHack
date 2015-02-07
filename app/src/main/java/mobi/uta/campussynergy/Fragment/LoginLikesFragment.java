@@ -46,10 +46,8 @@ public class LoginLikesFragment extends Fragment {
 
                     break;
             }
-<<<<<<< HEAD
-=======
 
->>>>>>> FETCH_HEAD
+
         }
     };
 
@@ -66,17 +64,12 @@ public class LoginLikesFragment extends Fragment {
 
     }
 
-<<<<<<< HEAD
 
+    @Override
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
 
-=======
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
->>>>>>> FETCH_HEAD
         picked = new ArrayList<>();
 
         picked.add(Boolean.FALSE);
@@ -86,17 +79,14 @@ public class LoginLikesFragment extends Fragment {
         picked.add(Boolean.FALSE);
         picked.add(Boolean.FALSE);
 
-<<<<<<< HEAD
-=======
+
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
->>>>>>> FETCH_HEAD
         buttonGreekLife = (ImageButton) root.findViewById(R.id.button1);
         buttonTech = (ImageButton) root.findViewById(R.id.button2);
         buttonAcademics = (ImageButton) root.findViewById(R.id.button3);
         buttonReligion = (ImageButton) root.findViewById(R.id.button4);
         buttonStudyGroups = (ImageButton) root.findViewById(R.id.button5);
         buttonMusic = (ImageButton) root.findViewById(R.id.button6);
-        mOverlay = root.findViewById(R.id.overlay);
 
         buttonGreekLife.setOnClickListener(clicky);
         buttonTech.setOnClickListener(clicky);
