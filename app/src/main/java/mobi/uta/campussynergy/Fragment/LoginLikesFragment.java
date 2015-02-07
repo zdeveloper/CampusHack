@@ -7,13 +7,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 import mobi.uta.campussynergy.R;
 
 /**
- * Created by James_Motha_Fucka on 2/7/15.
+ * Created by Jamesmothafucka on 2/7/15.
  */
 public class LoginLikesFragment extends Fragment {
 
