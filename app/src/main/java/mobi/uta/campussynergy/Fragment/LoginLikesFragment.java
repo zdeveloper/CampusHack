@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import mobi.uta.campussynergy.R;
 
 /**
- * Created by Jamesmothafucka on 2/7/15.
+ * Created by Jstaud on 2/7/15.
  */
 public class LoginLikesFragment extends Fragment {
 
