@@ -1,22 +1,49 @@
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.me.testapplication.Buttons">
 
-    <Button android:id="@+id/button1"
+    <ImageButton android:id="@+id/button1"
+        android:src="@drawable/ic_launcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lorem_ipsum"/>
-    <Button android:id="@+id/button2"
+        android:text="@string/lorem"/>
+    <ImageButton android:id="@+id/button2"
+        android:src="@drawable/ic_launcher"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/lorem"
         android:alpha="0.4"/>
-    <Button android:id="@+id/overlay"
+    <ImageButton android:id="@+id/button3"
+        android:src="@drawable/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem"
+        android:alpha="0.4"/>
+    <ImageButton android:id="@+id/button4"
+        android:src="@drawable/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem"
+        android:alpha="0.4"/>
+    <ImageButton android:id="@+id/button5"
+        android:src="@drawable/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem"
+        android:alpha="0.4"/>
+    <ImageButton android:id="@+id/button6"
+        android:src="@drawable/ic_launcher"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lorem"
+        android:alpha="0.4"/>
+    <ImageButton android:id="@+id/overlay"
+        android:src="@drawable/ic_launcher"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:alpha="0"/>
 
-</FrameLayout>
+</LinearLayout>
