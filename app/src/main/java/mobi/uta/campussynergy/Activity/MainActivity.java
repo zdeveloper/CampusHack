@@ -24,14 +24,11 @@ public class MainActivity extends FragmentActivity implements
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-<<<<<<< HEAD
         // Initilization
         viewPager = (ViewPager) findViewById(R.id.pager);
         actionBar = getActionBar();
         mAdapter = new TabsPagerAdapter(getSupportFragmentManager());
-=======
-        Log.v("test", "LOGIN");
->>>>>>> FETCH_HEAD
+
 
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);
