@@ -2,13 +2,11 @@ package mobi.uta.campussynergy.Fragment;
 
 import android.app.Fragment;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
@@ -21,7 +19,6 @@ import java.util.Calendar;
 import java.util.List;
 
 import mobi.uta.campussynergy.Activity.MainActivity;
-import mobi.uta.campussynergy.Activity.ViewActivity;
 import mobi.uta.campussynergy.Adapter.EventListAdapter;
 import mobi.uta.campussynergy.DataModel.Event;
 import mobi.uta.campussynergy.DataModel.Preferences;
@@ -94,33 +91,9 @@ public class EventListFragment extends Fragment {
                     Calendar future = Calendar.getInstance();
                     future.set(Calendar.DAY_OF_MONTH, tomorrow.get(Calendar.DAY_OF_MONTH) + 2);
 
-                    //String headerText;
-                    //long headerId;
-                    /*if(calendarStart.compareTo(tomorrow) < 0){
-                        //put on today
-                        headerText = "TODAY";
-                        headerId = 0;
-                        Log.d("Tag", "Setting it to today");
-                    } else if(calendarStart.compareTo(tomorrow) >=0 && calendarStart.compareTo(future) <0){
-                        //put on tomorrow
-                        headerText = "TOMORROW";
-                        headerId = 1;
-                        Log.d("Tag", "Setting it to TOMORROW");
-                    } else {
-                        // put on future
-                        headerText = "FUTURE";
-                        headerId = 2;
-                        Log.d("Tag", "Setting it to FUTURE");
-                    }*/
-
-                    //event.setHeaderId(headerId);
-                    //event.setHeader(headerText);
-
-
                     eventList.add(new EventListRow(context, event));
                     Log.d("DEBUG", "EVENT: " + event.getTitle() + " - DESCRIPTION: " + event.getDesctiption());
                 }
-                Log.e("DEBUG", "DONE WITH YOU SHIT");
 
                 eventList.add(new EventListHeader(context, "test"));
                 arrayAdapter = new EventListAdapter(context, eventList);
