@@ -47,7 +47,6 @@ public class MainActivity extends ActionBarActivity implements
         actionBar.setHomeButtonEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-
         // Adding Tabs
         for (String tab_name : tabs) {
             actionBar.addTab(actionBar.newTab().setText(tab_name)
@@ -78,6 +77,8 @@ public class MainActivity extends ActionBarActivity implements
             public void onPageScrollStateChanged(int arg0) {
             }
         });
+
+        viewPager.setCurrentItem(1);
     }
 
     @Override

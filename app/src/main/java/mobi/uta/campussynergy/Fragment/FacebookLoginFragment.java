@@ -76,8 +76,8 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
         switch (v.getId()) {
             case R.id.button_skip:
                 getActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.container, new LoginInfoFragment())
-                    .commit();
+                        .replace(R.id.container, new LoginInfoFragment())
+                        .commit();
                 break;
         }
     }

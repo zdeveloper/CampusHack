@@ -53,9 +53,6 @@ public class EventListFragment extends Fragment {
 
         lv = (ListView) rootView.findViewById(R.id.lv_events);
         queryParseForEvents();
-        /*for(Event e : preferences.getEvent()) {
-            eventList.add(new EventListRow(rootView.getContext(), e));
-        }*/
 
         return rootView;
     }
@@ -95,7 +92,6 @@ public class EventListFragment extends Fragment {
                     Log.d("DEBUG", "EVENT: " + event.getTitle() + " - DESCRIPTION: " + event.getDesctiption());
                 }
 
-                eventList.add(new EventListHeader(context, "test"));
                 arrayAdapter = new EventListAdapter(context, eventList);
                 lv.setAdapter(arrayAdapter);
             }
