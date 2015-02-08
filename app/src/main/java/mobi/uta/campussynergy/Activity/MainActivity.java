@@ -3,11 +3,6 @@ package mobi.uta.campussynergy.Activity;
 import android.content.Intent;
 
 
-import android.app.ListFragment;
-
-import android.content.Intent;
-
-import android.app.ListFragment;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -25,6 +20,7 @@ import java.util.List;
 
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
 import mobi.uta.campussynergy.DataModel.Event;
+import mobi.uta.campussynergy.DataModel.Preferences;
 import mobi.uta.campussynergy.Fragment.LoginLikesFragment;
 import mobi.uta.campussynergy.Fragment.RecomendedFragment;
 import mobi.uta.campussynergy.R;
@@ -37,6 +33,8 @@ public class MainActivity extends ActionBarActivity implements
     private ActionBar actionBar;
     private LoginLikesFragment loginFrag;
 
+    public static Preferences preferences;
+
     // Tab titles
     private String[] tabs = {"Recommended", "Main", "Friends"};
 
@@ -46,6 +44,7 @@ public class MainActivity extends ActionBarActivity implements
         setContentView(R.layout.activity_main);
 
         // Initilization
+        preferences = new Preferences();
         viewPager = (ViewPager) findViewById(R.id.pager);
         actionBar = getSupportActionBar();
         mAdapter = new TabsPagerAdapter( getFragmentManager());
@@ -132,29 +131,6 @@ public class MainActivity extends ActionBarActivity implements
 
     }
 
-    void queryParseForEvents(){
-        ParseQuery<ParseObject> query = ParseQuery.getQuery("Events");
-        query.findInBackground(new FindCallback<ParseObject>() {
-            @Override
-            public void done(List<ParseObject> parseObjects, ParseException e) {
-                for(ParseObject object : parseObjects)
-                {
-                    Event event = new Event();
-                    event.setTitle(object.getString("title"));
-                    event.setDesctiption(object.getString("description"));
-                    event.setFb_author(object.getString("fb_author"));
-                    event.setFb_page(object.getString("fb_page"));
-                    event.setImg_url(object.getString("img_url"));
-                    event.setType(object.getString("type"));
-                    event.setFb_page(object.getString("pageColor"));
-                    event.setStartTime(object.getDate("startDate"));
-                    event.setEndTime(object.getDate("endDate"));
 
-                    Log.d("DEBUG", "EVENT: " + event.getTitle() + " - DESCRIPTION: " + event.getDesctiption());
-                }
-
-            }
-        });
-    }
 
 }
