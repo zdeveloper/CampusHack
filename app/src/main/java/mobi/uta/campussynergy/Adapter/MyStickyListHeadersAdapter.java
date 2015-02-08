@@ -93,15 +93,13 @@ public class MyStickyListHeadersAdapter extends BaseAdapter implements StickyLis
 
         String headerText;
         long headerId;
-        if (counter == 0) {
-            //if(events.get(position).getStartCal().compareTo(tomorrow) < 0){
+        if(events.get(position).getStartCal().compareTo(tomorrow) < 0){
             //put on today
             headerText = "TODAY";
             headerId = 0;
             Log.d("Tag", "Setting it to today");
 
-        } else if (counter == 1) {
-            //} else if(events.get(position).getStartCal().compareTo(tomorrow) >=0 && events.get(position).getStartCal().compareTo(future) <0){
+        } else if(events.get(position).getStartCal().compareTo(tomorrow) >=0 && events.get(position).getStartCal().compareTo(future) <0){
             //put on tomorrow
             headerText = "TOMORROW";
             headerId = 1;
