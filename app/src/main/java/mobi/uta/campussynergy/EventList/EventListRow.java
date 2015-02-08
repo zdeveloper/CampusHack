@@ -1,8 +1,10 @@
 package mobi.uta.campussynergy.EventList;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
@@ -25,6 +27,7 @@ public class EventListRow implements EventListItem  {
 
     private static class ViewHolder {
         TextView title, time, date;
+        ImageView icon;
     }
 
     @Override
@@ -40,6 +43,7 @@ public class EventListRow implements EventListItem  {
             holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.event_list_row, null);
 
+            holder.icon = (ImageView) convertView.findViewById(R.id.iv_cat);
             holder.title = (TextView) convertView.findViewById(R.id.tv_title);
             holder.date = (TextView) convertView.findViewById(R.id.tv_date);
             holder.time = (TextView) convertView.findViewById(R.id.tv_time);
@@ -53,6 +57,7 @@ public class EventListRow implements EventListItem  {
         SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
 
 
+        holder.icon.setBackgroundResource(event.getCategoryDrawableId(event.getType()));
         holder.title.setText(event.getTitle());
         holder.time.setText(time.format(event.getStartCal().getTime()) + " - " + event.getEndCal().getTime());
         holder.date.setText(date.format(event.getStartCal().getTime()));

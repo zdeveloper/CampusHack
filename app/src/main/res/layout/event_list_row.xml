@@ -4,12 +4,19 @@
     android:layout_height="wrap_content"
     android:padding="@dimen/activity_vertical_margin">
 
-    <ImageView
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/ic_launcher"
-        android:id="@+id/iv_cat"
-        android:layout_marginRight="@dimen/activity_vertical_margin" />
+        android:background="@drawable/icon_cat"
+        android:padding="@dimen/button_like_padding"
+        android:layout_marginRight="@dimen/activity_vertical_margin">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/iv_cat" />
+
+    </FrameLayout>
 
     <LinearLayout
         android:orientation="vertical"
