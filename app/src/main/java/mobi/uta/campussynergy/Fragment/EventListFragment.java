@@ -2,11 +2,13 @@ package mobi.uta.campussynergy.Fragment;
 
 import android.app.Fragment;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.parse.FindCallback;
@@ -19,6 +21,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import mobi.uta.campussynergy.Activity.MainActivity;
+import mobi.uta.campussynergy.Activity.ViewActivity;
 import mobi.uta.campussynergy.Adapter.EventListAdapter;
 import mobi.uta.campussynergy.DataModel.Event;
 import mobi.uta.campussynergy.DataModel.Preferences;
@@ -45,19 +48,17 @@ public class EventListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView =  inflater.inflate(R.layout.fragment_event_list, container, false);
         context = rootView.getContext();
+
+        eventList = new ArrayList<EventListItem>();
+
         //get preferences
         preferences = ((MainActivity)getActivity()).preferences;
 
         lv = (ListView) rootView.findViewById(R.id.lv_events);
         queryParseForEvents();
-
-        eventList = new ArrayList<EventListItem>();
         /*for(Event e : preferences.getEvent()) {
             eventList.add(new EventListRow(rootView.getContext(), e));
         }*/
-
-
-
 
         return rootView;
     }
@@ -69,6 +70,7 @@ public class EventListFragment extends Fragment {
             public void done(List<ParseObject> parseObjects, ParseException e) {
                 for (ParseObject object : parseObjects) {
                     Event event = new Event();
+                    event.setObjectId(object.getObjectId());
                     event.setTitle(object.getString("title"));
                     event.setDesctiption(object.getString("description"));
                     event.setFb_author(object.getString("fb_author"));

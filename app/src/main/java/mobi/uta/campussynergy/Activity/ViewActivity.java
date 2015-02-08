@@ -60,7 +60,6 @@ public class ViewActivity extends ActionBarActivity {
         query.getInBackground(getIntent().getStringExtra(EVENT_ID), new GetCallback<ParseObject>() {
             @Override
             public void done(ParseObject parseObject, com.parse.ParseException e) {
-
                 if (e == null) {
                     // object will be your game score
                     event = parseObject;
