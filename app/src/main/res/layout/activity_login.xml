@@ -6,4 +6,4 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
     tools:ignore="MergeRootFrame"
-    android:background="@drawable/gray"/>
+    android:background="@drawable/testbg"/>

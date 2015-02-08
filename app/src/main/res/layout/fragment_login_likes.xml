@@ -31,105 +31,180 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                    android:layout_height="wrap_content">
 
-                    <ImageButton android:id="@+id/button1"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    University
+                    -->
+                    <ToggleButton android:id="@+id/button1"
+                        android:drawableTop="@drawable/ic_school_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:textOn="University"
+                        android:textOff="University" />
 
-                    <ImageButton android:id="@+id/button2"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Greek Life
+                    -->
+                    <ToggleButton android:id="@+id/button2"
+                        android:drawableTop="@drawable/ic_bank_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:layout_marginLeft="@dimen/button_like_padding"
+                        android:layout_marginRight="@dimen/button_like_padding"
+                        android:textOn="Greek Life"
+                        android:textOff="Greek Life"/>
 
-                    <ImageButton android:id="@+id/button3"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Study Groups
+                    -->
+                    <ToggleButton android:id="@+id/button3"
+                        android:drawableTop="@drawable/ic_account_multiple_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:textOn="Study Groups"
+                        android:textOff="Study Groups"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                    android:layout_height="wrap_content">
 
-                    <ImageButton android:id="@+id/button4"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Religion
+                    -->
+                    <ToggleButton android:id="@+id/button4"
+                        android:drawableTop="@drawable/ic_library_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:textOn="Religion"
+                        android:textOff="Religion" />
 
-                    <ImageButton android:id="@+id/button5"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Disabilities
+                    -->
+                    <ToggleButton android:id="@+id/button5"
+                        android:drawableTop="@drawable/ic_wheelchair_accessibility_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:textOn="Disabilities"
+                        android:textOff="Disabilities"
+                        android:layout_marginLeft="@dimen/button_like_padding"
+                        android:layout_marginRight="@dimen/button_like_padding" />
 
-                    <ImageButton android:id="@+id/button6"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Technology
+                    -->
+                    <ToggleButton android:id="@+id/button6"
+                        android:drawableTop="@drawable/ic_cellphone_link_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:textOn="Technology"
+                        android:textOff="Technology"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                    android:layout_height="wrap_content">
 
-                    <ImageButton android:id="@+id/button7"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Music
+                    -->
+                    <ToggleButton android:id="@+id/button7"
+                        android:drawableTop="@drawable/ic_music_box_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:textOn="Music"
+                        android:textOff="Music"/>
 
-                    <ImageButton android:id="@+id/button8"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Arts
+                    -->
+                    <ToggleButton android:id="@+id/button8"
+                        android:drawableTop="@drawable/ic_brush_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:layout_marginLeft="@dimen/button_like_padding"
+                        android:layout_marginRight="@dimen/button_like_padding"
+                        android:textOn="Arts"
+                        android:textOff="Arts"/>
 
-                    <ImageButton android:id="@+id/button9"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Sports
+                    -->
+                    <ToggleButton android:id="@+id/button9"
+                        android:drawableTop="@drawable/ic_dribbble_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:textOn="Sports"
+                        android:textOff="Sports"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                    android:layout_height="wrap_content">
 
-                    <ImageButton android:id="@+id/button10"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Workshops
+                    -->
+                    <ToggleButton android:id="@+id/button10"
+                        android:drawableTop="@drawable/ic_presentation_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:textOn="Workshops"
+                        android:textOff="Workshops" />
 
-                    <ImageButton android:id="@+id/button11"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Meetups
+                    -->
+                    <ToggleButton android:id="@+id/button11"
+                        android:drawableTop="@drawable/ic_human_male_female_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:layout_marginLeft="@dimen/button_like_padding"
+                        android:layout_marginRight="@dimen/button_like_padding"
+                        android:textOn="Meetups"
+                        android:textOff="Meetups"/>
 
-                    <ImageButton android:id="@+id/button12"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Diversity
+                    -->
+                    <ToggleButton android:id="@+id/button12"
+                        android:drawableTop="@drawable/ic_duck_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        style="@style/LikeButton"
+                        android:textOn="Diversity"
+                        android:textOff="Diversity"/>
 
                 </LinearLayout>
 
@@ -148,8 +223,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Back"
-            android:background="@drawable/button_login_info"
-            android:textColor="@android:color/white"
+            style="@style/LoginInfoButton"
             android:id="@+id/button_back" />
 
         <View
@@ -162,8 +236,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Finish"
-            android:background="@drawable/button_login_info"
-            android:textColor="@android:color/white"
+            style="@style/LoginInfoButton"
             android:id="@+id/button_next" />
     </LinearLayout>
 </LinearLayout>

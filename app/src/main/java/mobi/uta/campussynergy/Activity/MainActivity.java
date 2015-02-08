@@ -8,6 +8,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
 import mobi.uta.campussynergy.DataModel.Preferences;
@@ -24,6 +25,7 @@ public class MainActivity extends ActionBarActivity implements
     private LoginLikesFragment loginFrag;
 
     public static Preferences preferences;
+    private static final int CODE_QR = 289;
 
     // Tab titles
     private String[] tabs = {"Recommended", "Main", "Friends"};
@@ -91,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements
             case R.id.action_qr:
                 Intent intent = new Intent("com.google.zxing.client.android.SCAN");
                 intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
-                startActivityForResult(intent, 0);
+                startActivityForResult(intent, CODE_QR);
                 return true;
             case R.id.action_map_view:
                 Intent i = new Intent(this, MapActivity.class);
@@ -102,6 +104,17 @@ public class MainActivity extends ActionBarActivity implements
         }
     }
 
+    public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        if (requestCode == CODE_QR) {
+            if (resultCode == RESULT_OK) {
+
+                String contents = intent.getStringExtra("SCAN_RESULT");
+                String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
+
+                Toast.makeText(getBaseContext(), contents + " ::: " + format, Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
 
     @Override
     public void onTabSelected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction fragmentTransaction) {
