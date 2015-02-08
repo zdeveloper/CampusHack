@@ -22,6 +22,7 @@ import com.facebook.SessionState;
 import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphObject;
 import com.facebook.widget.LoginButton;
+import com.parse.ParseObject;
 
 import java.util.Arrays;
 
@@ -141,6 +142,11 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
                         SharedPreferences.Editor editor = prefs.edit();
                         editor.putString(getResources().getString(R.string.pref_facebook_id), s);
                         editor.commit();
+
+                        //put in parse
+                        ParseObject facebookid = new ParseObject("FacebookUsers");
+                        facebookid.put("facebook_id", s);
+                        facebookid.saveInBackground();
 
                         Intent i = new Intent(context, MainActivity.class);
                         i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);

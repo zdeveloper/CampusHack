@@ -39,6 +39,7 @@ public class Preferences {
                     event.setImg_url(object.getString("img_url"));
                     event.setType(object.getString("type"));
                     event.setFb_page(object.getString("pageColor"));
+                    event.setLocation(object.getParseGeoPoint("location"));
 
                     Calendar calendarStart = Calendar.getInstance();
                     calendarStart.setTime(object.getDate("startDate"));

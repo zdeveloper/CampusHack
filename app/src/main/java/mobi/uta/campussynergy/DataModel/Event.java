@@ -1,12 +1,32 @@
 package mobi.uta.campussynergy.DataModel;
 
+import com.parse.ParseGeoPoint;
+
 import java.util.Calendar;
 
 /**
  * Created by zedd on 2/7/15.
  */
 public class Event {
-    String title, desctiption, fb_author, fb_page, type, img_url, pg_color, header;
+    String title, desctiption, fb_author, fb_page, type, img_url, pg_color, header, objectId;
+    ParseGeoPoint location;
+
+    public String getObjectId() {
+        return objectId;
+    }
+
+    public void setObjectId(String objectId) {
+        this.objectId = objectId;
+    }
+
+    public ParseGeoPoint getLocation() {
+        return location;
+    }
+
+    public void setLocation(ParseGeoPoint location) {
+        this.location = location;
+    }
+
     long headerId;
     Calendar startCal, endCal;
 

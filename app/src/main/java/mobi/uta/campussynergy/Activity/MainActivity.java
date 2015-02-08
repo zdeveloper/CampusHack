@@ -10,6 +10,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.parse.ParseObject;
+
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
 import mobi.uta.campussynergy.DataModel.Preferences;
 import mobi.uta.campussynergy.Fragment.LoginLikesFragment;
@@ -34,6 +36,7 @@ public class MainActivity extends ActionBarActivity implements
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         // Initilization
         preferences = new Preferences();
@@ -90,7 +93,7 @@ public class MainActivity extends ActionBarActivity implements
         switch (item.getItemId()) {
             case R.id.action_settings:
                 Intent view = new Intent(this, ViewActivity.class);
-                view.putExtra(ViewActivity.EVENT_ID, 22);
+                view.putExtra(ViewActivity.EVENT_ID, "HXm3dGIPpf");
                 startActivity(view);
                 return true;
 
