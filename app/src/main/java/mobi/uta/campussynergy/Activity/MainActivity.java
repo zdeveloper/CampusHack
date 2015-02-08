@@ -89,12 +89,17 @@ public class MainActivity extends ActionBarActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
+                Intent view = new Intent(this, ViewActivity.class);
+                view.putExtra(ViewActivity.EVENT_ID, 22);
+                startActivity(view);
                 return true;
+
             case R.id.action_qr:
                 Intent intent = new Intent("com.google.zxing.client.android.SCAN");
                 intent.putExtra("SCAN_MODE", "QR_CODE_MODE");
                 startActivityForResult(intent, CODE_QR);
                 return true;
+
             case R.id.action_map_view:
                 Intent i = new Intent(this, MapActivity.class);
                 startActivity(i);

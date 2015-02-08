@@ -2,10 +2,14 @@
 <resources>
     <color name="orange_primary">#FF9800</color>
     <color name="orange_dark">#F57C00</color>
+    <color name="orange_light">#FFA726</color>
+    <color name="orange_super_light">#FFE0B2</color>
+
     <color name="top_item">#a6c</color>
     <color name="sticky_item">#fff</color>
     <color name="sticky_item_text">#09c</color>
     <color name="listview_item">#282828</color>
+
     <color name="divider">#FFA726</color>
     <color name="clear_white">#a0ff9800</color>
     <color name="orange_you_glad_i_didnt_say_bananna">#FFEB3B</color>

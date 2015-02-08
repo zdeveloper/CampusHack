@@ -9,4 +9,6 @@
     <dimen name="button_like_padding">8dp</dimen>
     <dimen name="selection_horizontal_margin">64dp</dimen>
 
+    <dimen name="flash_message_padding">4dp</dimen>
+
 </resources>

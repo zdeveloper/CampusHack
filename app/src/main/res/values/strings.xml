@@ -13,4 +13,7 @@
     <string name="pref_facebook_id">facebook_id</string>
     <string name="title_activity_map">MapActivity</string>
 
+    <string name="message_rsvp">Would you like to go?</string>
+    <string name="message_rsvp_calendar">Add to calendar</string>
+
 </resources>
