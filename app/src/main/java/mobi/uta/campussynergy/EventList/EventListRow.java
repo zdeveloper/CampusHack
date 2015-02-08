@@ -1,14 +1,23 @@
 package mobi.uta.campussynergy.EventList;
 
 import android.content.Context;
+<<<<<<< HEAD
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+=======
+import android.content.Intent;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.widget.LinearLayout;
+>>>>>>> FETCH_HEAD
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 
+import mobi.uta.campussynergy.Activity.ViewActivity;
 import mobi.uta.campussynergy.DataModel.Event;
 import mobi.uta.campussynergy.R;
 
@@ -27,8 +36,18 @@ public class EventListRow implements EventListItem  {
 
     private static class ViewHolder {
         TextView title, time, date;
+<<<<<<< HEAD
         ImageView icon;
+=======
+        String objectId;
+        LinearLayout layout;
+>>>>>>> FETCH_HEAD
     }
+
+    public Event getEvent(){
+        return this.event;
+    }
+
 
     @Override
     public int getViewType() {
@@ -47,6 +66,7 @@ public class EventListRow implements EventListItem  {
             holder.title = (TextView) convertView.findViewById(R.id.tv_title);
             holder.date = (TextView) convertView.findViewById(R.id.tv_date);
             holder.time = (TextView) convertView.findViewById(R.id.tv_time);
+            holder.layout = (LinearLayout) convertView.findViewById(R.id.fuckyourspaguettecode);
 
             convertView.setTag(holder);
         } else {
@@ -59,8 +79,19 @@ public class EventListRow implements EventListItem  {
 
         holder.icon.setBackgroundResource(event.getCategoryDrawableId(event.getType()));
         holder.title.setText(event.getTitle());
+        holder.objectId = event.getObjectId();
         holder.time.setText(time.format(event.getStartCal().getTime()) + " - " + event.getEndCal().getTime());
         holder.date.setText(date.format(event.getStartCal().getTime()));
+
+
+        holder.layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, ViewActivity.class);
+                i.putExtra(ViewActivity.EVENT_ID, event.getObjectId());
+                context.startActivity(i);
+            }
+        });
 
 
         return convertView;

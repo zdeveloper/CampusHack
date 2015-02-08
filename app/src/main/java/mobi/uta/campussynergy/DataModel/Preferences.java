@@ -17,6 +17,8 @@ import java.util.List;
 public class Preferences {
     private ArrayList<Event> eventList = new ArrayList<>();
 
+    public static String pref_file = "MyPREFERENCES";
+
     public Preferences(){
         queryParseForEvents();
     }

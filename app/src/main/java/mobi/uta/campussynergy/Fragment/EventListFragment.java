@@ -45,19 +45,17 @@ public class EventListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView =  inflater.inflate(R.layout.fragment_event_list, container, false);
         context = rootView.getContext();
+
+        eventList = new ArrayList<EventListItem>();
+
         //get preferences
         preferences = ((MainActivity)getActivity()).preferences;
 
         lv = (ListView) rootView.findViewById(R.id.lv_events);
         queryParseForEvents();
-
-        eventList = new ArrayList<EventListItem>();
         /*for(Event e : preferences.getEvent()) {
             eventList.add(new EventListRow(rootView.getContext(), e));
         }*/
-
-
-
 
         return rootView;
     }
@@ -69,6 +67,7 @@ public class EventListFragment extends Fragment {
             public void done(List<ParseObject> parseObjects, ParseException e) {
                 for (ParseObject object : parseObjects) {
                     Event event = new Event();
+                    event.setObjectId(object.getObjectId());
                     event.setTitle(object.getString("title"));
                     event.setDesctiption(object.getString("description"));
                     event.setFb_author(object.getString("fb_author"));
@@ -92,33 +91,9 @@ public class EventListFragment extends Fragment {
                     Calendar future = Calendar.getInstance();
                     future.set(Calendar.DAY_OF_MONTH, tomorrow.get(Calendar.DAY_OF_MONTH) + 2);
 
-                    //String headerText;
-                    //long headerId;
-                    /*if(calendarStart.compareTo(tomorrow) < 0){
-                        //put on today
-                        headerText = "TODAY";
-                        headerId = 0;
-                        Log.d("Tag", "Setting it to today");
-                    } else if(calendarStart.compareTo(tomorrow) >=0 && calendarStart.compareTo(future) <0){
-                        //put on tomorrow
-                        headerText = "TOMORROW";
-                        headerId = 1;
-                        Log.d("Tag", "Setting it to TOMORROW");
-                    } else {
-                        // put on future
-                        headerText = "FUTURE";
-                        headerId = 2;
-                        Log.d("Tag", "Setting it to FUTURE");
-                    }*/
-
-                    //event.setHeaderId(headerId);
-                    //event.setHeader(headerText);
-
-
                     eventList.add(new EventListRow(context, event));
                     Log.d("DEBUG", "EVENT: " + event.getTitle() + " - DESCRIPTION: " + event.getDesctiption());
                 }
-                Log.e("DEBUG", "DONE WITH YOU SHIT");
 
                 eventList.add(new EventListHeader(context, "test"));
                 arrayAdapter = new EventListAdapter(context, eventList);

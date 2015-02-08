@@ -90,9 +90,7 @@ public class MainActivity extends ActionBarActivity implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.action_settings:
-                Intent view = new Intent(this, ViewActivity.class);
-                view.putExtra(ViewActivity.EVENT_ID, "HXm3dGIPpf");
-                startActivity(view);
+
                 return true;
 
             case R.id.action_qr:
