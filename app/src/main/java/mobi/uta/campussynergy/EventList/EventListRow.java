@@ -4,9 +4,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 
@@ -29,6 +29,7 @@ public class EventListRow implements EventListItem  {
 
     private static class ViewHolder {
         TextView title, time, date;
+        ImageView icon;
         String objectId;
         LinearLayout layout;
     }
@@ -51,6 +52,7 @@ public class EventListRow implements EventListItem  {
             holder = new ViewHolder();
             convertView = inflater.inflate(R.layout.event_list_row, null);
 
+            holder.icon = (ImageView) convertView.findViewById(R.id.iv_cat);
             holder.title = (TextView) convertView.findViewById(R.id.tv_title);
             holder.date = (TextView) convertView.findViewById(R.id.tv_date);
             holder.time = (TextView) convertView.findViewById(R.id.tv_time);
@@ -65,6 +67,7 @@ public class EventListRow implements EventListItem  {
         SimpleDateFormat date = new SimpleDateFormat("MM/dd/yyyy");
 
 
+        holder.icon.setBackgroundResource(event.getCategoryDrawableId(event.getType()));
         holder.title.setText(event.getTitle());
         holder.objectId = event.getObjectId();
         holder.time.setText(time.format(event.getStartCal().getTime()) + " - " + event.getEndCal().getTime());

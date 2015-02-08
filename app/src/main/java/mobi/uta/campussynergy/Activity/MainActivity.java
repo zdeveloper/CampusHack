@@ -13,6 +13,7 @@ import com.parse.ParseObject;
 
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
 import mobi.uta.campussynergy.DataModel.Preferences;
+import mobi.uta.campussynergy.Fragment.EventListFragment;
 import mobi.uta.campussynergy.Fragment.LoginLikesFragment;
 import mobi.uta.campussynergy.Fragment.RecomendedFragment;
 import mobi.uta.campussynergy.R;
@@ -54,7 +55,7 @@ public class MainActivity extends ActionBarActivity implements
         }
 
         getFragmentManager().beginTransaction()
-                .replace(R.id.main_container, new RecomendedFragment())
+                .replace(R.id.main_container, new EventListFragment())
                 .commit();
 
 

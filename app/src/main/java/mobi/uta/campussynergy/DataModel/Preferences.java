@@ -39,7 +39,7 @@ public class Preferences {
                     event.setFb_author(object.getString("fb_author"));
                     event.setFb_page(object.getString("fb_page"));
                     event.setImg_url(object.getString("img_url"));
-                    event.setType(object.getString("type"));
+                    event.setType(object.getInt("type"));
                     event.setFb_page(object.getString("pageColor"));
                     event.setLocation(object.getParseGeoPoint("location"));
 
