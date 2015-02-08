@@ -1,19 +1,12 @@
 package mobi.uta.campussynergy.EventList;
 
 import android.content.Context;
-<<<<<<< HEAD
-import android.graphics.drawable.Drawable;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.ImageView;
-=======
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
->>>>>>> FETCH_HEAD
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 
@@ -36,12 +29,9 @@ public class EventListRow implements EventListItem  {
 
     private static class ViewHolder {
         TextView title, time, date;
-<<<<<<< HEAD
         ImageView icon;
-=======
         String objectId;
         LinearLayout layout;
->>>>>>> FETCH_HEAD
     }
 
     public Event getEvent(){
