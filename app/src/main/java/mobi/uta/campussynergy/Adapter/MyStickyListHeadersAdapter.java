@@ -1,7 +1,6 @@
 package mobi.uta.campussynergy.Adapter;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,8 +9,6 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 
 import mobi.uta.campussynergy.DataModel.Event;
 import mobi.uta.campussynergy.R;
@@ -61,13 +58,14 @@ public class MyStickyListHeadersAdapter extends BaseAdapter implements StickyLis
         }
 
         holder.title.setText(events.get(position).getTitle());
-        //SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
         holder.time.setText(sdf.format(events.get(position).getStartCal().getTime()) + " - " + sdf.format(events.get(position).getStartCal().getTime()));
 
         return convertView;
     }
+
+    static long headerId = -1;
 
     @Override
     public View getHeaderView(int position, View convertView, ViewGroup parent) {
@@ -80,40 +78,8 @@ public class MyStickyListHeadersAdapter extends BaseAdapter implements StickyLis
         } else {
             holder = (HeaderViewHolder) convertView.getTag();
         }
-        //set header text as first char in name
-        Date today = new Date();
-        Calendar rightNow = Calendar.getInstance();
 
-        Calendar tomorrow = Calendar.getInstance();
-        tomorrow.set(Calendar.DAY_OF_MONTH, tomorrow.get(Calendar.DAY_OF_MONTH) + 1);
-
-        Calendar future = Calendar.getInstance();
-        future.set(Calendar.DAY_OF_MONTH, tomorrow.get(Calendar.DAY_OF_MONTH) + 2);
-
-
-        String headerText;
-        long headerId;
-        if(events.get(position).getStartCal().compareTo(tomorrow) < 0){
-            //put on today
-            headerText = "TODAY";
-            headerId = 0;
-            Log.d("Tag", "Setting it to today");
-
-        } else if(events.get(position).getStartCal().compareTo(tomorrow) >=0 && events.get(position).getStartCal().compareTo(future) <0){
-            //put on tomorrow
-            headerText = "TOMORROW";
-            headerId = 1;
-            Log.d("Tag", "Setting it to TOMORROW");
-        } else {
-            // put on future
-            headerText = "FUTURE";
-            headerId = 2;
-            Log.d("Tag", "Setting it to FUTURE");
-        }
-
-        counter++;
-        events.get(position).setHeaderId(headerId);
-        holder.text.setText(headerText);
+        holder.text.setText(events.get(position).getHeader());
         return convertView;
     }
 
@@ -130,5 +96,6 @@ public class MyStickyListHeadersAdapter extends BaseAdapter implements StickyLis
     class ViewHolder {
         TextView title, time;
     }
+
 
 }

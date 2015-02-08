@@ -23,7 +23,6 @@ public class EventListFragment extends Fragment {
         // Required empty public constructor
     }
 
-    @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 

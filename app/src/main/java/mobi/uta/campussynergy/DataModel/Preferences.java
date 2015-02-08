@@ -48,6 +48,35 @@ public class Preferences {
                     calendarEnd.setTime(object.getDate("endDate"));
                     event.setEndCal(calendarEnd);
 
+
+                    Calendar tomorrow = Calendar.getInstance();
+                    tomorrow.set(Calendar.DAY_OF_MONTH, tomorrow.get(Calendar.DAY_OF_MONTH) + 1);
+
+                    Calendar future = Calendar.getInstance();
+                    future.set(Calendar.DAY_OF_MONTH, tomorrow.get(Calendar.DAY_OF_MONTH) + 2);
+
+                    String headerText;
+                    long headerId;
+                    if(calendarStart.compareTo(tomorrow) < 0){
+                        //put on today
+                        headerText = "TODAY";
+                        headerId = 0;
+                        Log.d("Tag", "Setting it to today");
+                    } else if(calendarStart.compareTo(tomorrow) >=0 && calendarStart.compareTo(future) <0){
+                        //put on tomorrow
+                        headerText = "TOMORROW";
+                        headerId = 1;
+                        Log.d("Tag", "Setting it to TOMORROW");
+                    } else {
+                        // put on future
+                        headerText = "FUTURE";
+                        headerId = 2;
+                        Log.d("Tag", "Setting it to FUTURE");
+                    }
+
+                    event.setHeaderId(headerId);
+                    event.setHeader(headerText);
+
                     eventList.add(event);
                     Log.d("DEBUG", "EVENT: " + event.getTitle() + " - DESCRIPTION: " + event.getDesctiption());
                 }

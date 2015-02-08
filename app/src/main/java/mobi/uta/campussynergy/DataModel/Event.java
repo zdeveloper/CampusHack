@@ -1,15 +1,22 @@
 package mobi.uta.campussynergy.DataModel;
 
 import java.util.Calendar;
-import java.util.Date;
 
 /**
  * Created by zedd on 2/7/15.
  */
 public class Event {
-    String title, desctiption, fb_author, fb_page, type, img_url, pg_color;
-    long header;
+    String title, desctiption, fb_author, fb_page, type, img_url, pg_color, header;
+    long headerId;
     Calendar startCal, endCal;
+
+    public String getHeader() {
+        return header;
+    }
+
+    public void setHeader(String header) {
+        this.header = header;
+    }
 
     public Calendar getEndCal() {
         return endCal;
@@ -28,11 +35,11 @@ public class Event {
     }
 
     public long getHeaderId() {
-        return header;
+        return headerId;
     }
 
     public void setHeaderId(long headerid) {
-        this.header = header;
+        this.headerId = headerId;
     }
 
     public String getTitle() {
