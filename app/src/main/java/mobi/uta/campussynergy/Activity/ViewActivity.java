@@ -20,5 +20,6 @@ public class ViewActivity extends ActionBarActivity {
         setContentView(R.layout.activity_view);
 
         eventId = getIntent().getExtras().getInt(EVENT_ID);
+
     }
 }
