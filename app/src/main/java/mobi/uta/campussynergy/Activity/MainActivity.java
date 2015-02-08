@@ -1,7 +1,6 @@
 package mobi.uta.campussynergy.Activity;
 
 import android.content.Intent;
-
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
@@ -47,7 +46,6 @@ public class MainActivity extends ActionBarActivity implements
         viewPager.setAdapter(mAdapter);
         actionBar.setHomeButtonEnabled(false);
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
 
 
         // Adding Tabs
