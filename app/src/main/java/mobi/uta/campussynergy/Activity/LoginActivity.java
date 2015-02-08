@@ -11,6 +11,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.parse.Parse;
+
 import mobi.uta.campussynergy.Fragment.FacebookLoginFragment;
 import mobi.uta.campussynergy.R;
 
@@ -23,6 +25,9 @@ public class LoginActivity extends FragmentActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        //initialize parse
+        Parse.initialize(this, "QuoI3WPv5g9LyP4awzhZEH8FvRKIgWgFEdFJSTmB", "DsDAvLDiDSLQ9VFOLRte3Ck7Yk1MmJONfeUWjZ5V");
 
         //If user has facebook ID stored
         SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
