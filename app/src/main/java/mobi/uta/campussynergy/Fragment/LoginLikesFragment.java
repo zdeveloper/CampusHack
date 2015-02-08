@@ -66,7 +66,6 @@ public class LoginLikesFragment extends Fragment {
                     }
                     break;
             }
-
         }
     };
 
@@ -85,7 +84,6 @@ public class LoginLikesFragment extends Fragment {
 
 
     @Override
-
     public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
         context = root.getContext();
