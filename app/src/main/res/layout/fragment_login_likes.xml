@@ -26,6 +26,7 @@
                     android:text="Your Interests"
                     android:textSize="26sp"
                     style="?android:attr/listSeparatorTextViewStyle"
+                    android:textColor="@color/orange_primary"
                     android:id="@+id/textView" />
 
                 <LinearLayout

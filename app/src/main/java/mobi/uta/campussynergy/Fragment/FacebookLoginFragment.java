@@ -39,7 +39,6 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
     private UiLifecycleHelper uiHelper;
 
     private Button bSkip;
-    private TextView tv;
 
     public FacebookLoginFragment() {
 
@@ -64,9 +63,6 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
 
         bSkip = (Button) view.findViewById(R.id.button_skip);
         bSkip.setOnClickListener(this);
-
-        //TEMP
-        tv = (TextView) view.findViewById(R.id.tv_temp);
 
         return view;
     }
@@ -121,8 +117,6 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
 
     private void onSessionStateChange(Session session, SessionState state, Exception exception) {
         if (state.isOpened()) {
-            //userInfoTextView.setVisibility(View.VISIBLE);
-            tv.setText("Logged in\n");
 
             String[] requestIds = {"me"};
 
@@ -149,10 +143,9 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
                         facebookid.put("facebook_id", s);
                         facebookid.saveInBackground();
 
-                        Intent i = new Intent(context, MainActivity.class);
-                        i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                        startActivity(i);
-                        getActivity().finish();
+                        getFragmentManager().beginTransaction()
+                            .replace(R.id.container, new LoginInfoFragment())
+                            .commit();
 
                     }
                 }));

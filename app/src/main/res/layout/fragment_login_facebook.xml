@@ -4,23 +4,37 @@
     android:layout_height="match_parent"
     android:padding="@dimen/activity_horizontal_margin">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:id="@+id/tv_temp" />
+    <FrameLayout
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_width="fill_parent">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/google_play"
+            android:id="@+id/tv_temp"
+            android:layout_gravity="center_horizontal"/>
+    </FrameLayout>
 
-    <com.facebook.widget.LoginButton
-        android:id="@+id/button_auth_facebook"
+    <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="30dp" />
+        android:orientation="vertical">
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Skip"
-        android:background="@drawable/button_skip"
-        android:id="@+id/button_skip" />
+        <com.facebook.widget.LoginButton
+            android:id="@+id/button_auth_facebook"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal" />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="Skip"
+            android:background="@drawable/button_skip"
+            android:id="@+id/button_skip"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="@dimen/activity_horizontal_margin"/>
+
+    </LinearLayout>
 </LinearLayout>

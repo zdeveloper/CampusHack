@@ -149,7 +149,14 @@ public class MainActivity extends ActionBarActivity implements
                 String contents = intent.getStringExtra("SCAN_RESULT");
                 String format = intent.getStringExtra("SCAN_RESULT_FORMAT");
 
-                Toast.makeText(getBaseContext(), contents + " ::: " + format, Toast.LENGTH_SHORT).show();
+                String mobiString = "mobi.campussynergy://";
+
+                if(contents.startsWith(mobiString)) {
+                    String id = contents.substring(mobiString.length());
+                    Intent i = new Intent(getBaseContext(), ViewActivity.class);
+                    i.putExtra(ViewActivity.EVENT_ID, id);
+                    startActivity(i);
+                }
             }
         }
     }
