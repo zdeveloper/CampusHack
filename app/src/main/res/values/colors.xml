@@ -2,5 +2,9 @@
 <resources>
     <color name="orange_primary">#FF9800</color>
     <color name="orange_dark">#F57C00</color>
-    <color name="divider">#FFFFFF</color>
+    <color name="divider">#FFA726</color>
+
+    <color name="clear_white">#a0ff9800</color>
+
+    <color name="orange_you_glad_i_didnt_say_bananna">#FFEB3B</color>
 </resources>

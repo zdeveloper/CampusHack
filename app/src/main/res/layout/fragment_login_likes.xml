@@ -31,165 +31,180 @@
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/selection_horizontal_margin"
-                    android:paddingBottom="@dimen/selection_horizontal_margin">
+                    android:layout_height="wrap_content">
 
                     <!--
                     University
                     -->
-                    <Button android:id="@+id/button1"
-                        android:drawableTop="@drawable/school"
+                    <ToggleButton android:id="@+id/button1"
+                        android:drawableTop="@drawable/ic_school_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="University"/>
+                        style="@style/LikeButton"
+                        android:textOn="University"
+                        android:textOff="University" />
 
                     <!--
                     Greek Life
                     -->
-                    <Button android:id="@+id/button2"
-                        android:drawableTop="@drawable/bank"
+                    <ToggleButton android:id="@+id/button2"
+                        android:drawableTop="@drawable/ic_bank_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Greek Life"/>
+                        style="@style/LikeButton"
+                        android:layout_marginLeft="@dimen/button_like_padding"
+                        android:layout_marginRight="@dimen/button_like_padding"
+                        android:textOn="Greek Life"
+                        android:textOff="Greek Life"/>
 
                     <!--
                     Study Groups
                     -->
-                    <Button android:id="@+id/button3"
-                        android:drawableTop="@drawable/account_multiple"
+                    <ToggleButton android:id="@+id/button3"
+                        android:drawableTop="@drawable/ic_account_multiple_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Study Groups"/>
+                        style="@style/LikeButton"
+                        android:textOn="Study Groups"
+                        android:textOff="Study Groups"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/selection_horizontal_margin">
+                    android:layout_height="wrap_content">
 
                     <!--
                     Religion
                     -->
-                    <Button android:id="@+id/button4"
-                        android:drawableTop="@drawable/library"
+                    <ToggleButton android:id="@+id/button4"
+                        android:drawableTop="@drawable/ic_library_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Religion"/>
+                        style="@style/LikeButton"
+                        android:textOn="Religion"
+                        android:textOff="Religion" />
 
                     <!--
                     Disabilities
                     -->
-                    <Button android:id="@+id/button5"
-                        android:drawableTop="@drawable/wheelchair_accessibility"
+                    <ToggleButton android:id="@+id/button5"
+                        android:drawableTop="@drawable/ic_wheelchair_accessibility_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Disabilities"/>
+                        style="@style/LikeButton"
+                        android:textOn="Disabilities"
+                        android:textOff="Disabilities"
+                        android:layout_marginLeft="@dimen/button_like_padding"
+                        android:layout_marginRight="@dimen/button_like_padding" />
 
                     <!--
                     Technology
                     -->
-                    <Button android:id="@+id/button6"
-                        android:drawableTop="@drawable/cellphone_link"
+                    <ToggleButton android:id="@+id/button6"
+                        android:drawableTop="@drawable/ic_cellphone_link_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Technology"/>
+                        style="@style/LikeButton"
+                        android:textOn="Technology"
+                        android:textOff="Technology"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/selection_horizontal_margin">
+                    android:layout_height="wrap_content">
 
                     <!--
                     Music
                     -->
-                    <Button android:id="@+id/button7"
-                        android:drawableTop="@drawable/music_box"
+                    <ToggleButton android:id="@+id/button7"
+                        android:drawableTop="@drawable/ic_music_box_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Music"/>
+                        style="@style/LikeButton"
+                        android:textOn="Music"
+                        android:textOff="Music"/>
 
                     <!--
                     Arts
                     -->
-                    <Button android:id="@+id/button8"
-                        android:drawableTop="@drawable/brush"
+                    <ToggleButton android:id="@+id/button8"
+                        android:drawableTop="@drawable/ic_brush_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Arts"/>
+                        style="@style/LikeButton"
+                        android:layout_marginLeft="@dimen/button_like_padding"
+                        android:layout_marginRight="@dimen/button_like_padding"
+                        android:textOn="Arts"
+                        android:textOff="Arts"/>
 
                     <!--
                     Sports
                     -->
-                    <Button android:id="@+id/button9"
-                        android:drawableTop="@drawable/dribbble"
+                    <ToggleButton android:id="@+id/button9"
+                        android:drawableTop="@drawable/ic_dribbble_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Sports"/>
+                        style="@style/LikeButton"
+                        android:textOn="Sports"
+                        android:textOff="Sports"/>
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/selection_horizontal_margin">
+                    android:layout_height="wrap_content">
 
                     <!--
                     Workshops
                     -->
-                    <Button android:id="@+id/button10"
-                        android:drawableTop="@drawable/presentation"
+                    <ToggleButton android:id="@+id/button10"
+                        android:drawableTop="@drawable/ic_presentation_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Workshops"/>
+                        style="@style/LikeButton"
+                        android:textOn="Workshops"
+                        android:textOff="Workshops" />
 
                     <!--
                     Meetups
                     -->
-                    <Button android:id="@+id/button11"
-                        android:drawableTop="@drawable/human_male_female"
+                    <ToggleButton android:id="@+id/button11"
+                        android:drawableTop="@drawable/ic_human_male_female_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Meetups"/>
+                        style="@style/LikeButton"
+                        android:layout_marginLeft="@dimen/button_like_padding"
+                        android:layout_marginRight="@dimen/button_like_padding"
+                        android:textOn="Meetups"
+                        android:textOff="Meetups"/>
 
                     <!--
                     Diversity
                     -->
-                    <Button android:id="@+id/button12"
-                        android:drawableTop="@drawable/duck"
+                    <ToggleButton android:id="@+id/button12"
+                        android:drawableTop="@drawable/ic_duck_black_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
-                        android:background="@android:color/white"
-                        android:text="Diversity"/>
+                        style="@style/LikeButton"
+                        android:textOn="Diversity"
+                        android:textOff="Diversity"/>
 
                 </LinearLayout>
 
@@ -208,8 +223,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Back"
-            android:background="@drawable/button_login_info"
-            android:textColor="@android:color/white"
+            style="@style/LoginInfoButton"
             android:id="@+id/button_back" />
 
         <View
@@ -222,8 +236,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Finish"
-            android:background="@drawable/button_login_info"
-            android:textColor="@android:color/white"
+            style="@style/LoginInfoButton"
             android:id="@+id/button_next" />
     </LinearLayout>
 </LinearLayout>

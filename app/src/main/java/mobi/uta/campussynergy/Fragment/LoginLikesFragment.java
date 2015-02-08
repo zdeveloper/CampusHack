@@ -3,6 +3,7 @@ package mobi.uta.campussynergy.Fragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -32,10 +33,10 @@ public class LoginLikesFragment extends Fragment {
         @Override
         public void onClick(View v) {
             switch(v.getId()) {
-                case R.id.button1:
-                    toggle(0);
-                    break;
-                case R.id.button2:
+                /*case R.id.button1:
+                    toggle(buttonGreekLife);
+                    break;*/
+                /*case R.id.button2:
                     toggle(1);
                     break;
                 case R.id.button3:
@@ -50,7 +51,7 @@ public class LoginLikesFragment extends Fragment {
                     break;
                 case R.id.button6:
                     toggle(5);
-                    break;
+                    break;*/
 
                 case R.id.button_back:
                         getActivity().getSupportFragmentManager().beginTransaction()
@@ -88,15 +89,6 @@ public class LoginLikesFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_login_likes, container, false);
         context = root.getContext();
 
-        picked = new ArrayList<>();
-
-        picked.add(Boolean.FALSE);
-        picked.add(Boolean.FALSE);
-        picked.add(Boolean.FALSE);
-        picked.add(Boolean.FALSE);
-        picked.add(Boolean.FALSE);
-        picked.add(Boolean.FALSE);
-
         Button bNext = (Button) root.findViewById(R.id.button_next);
         Button bBack = (Button) root.findViewById(R.id.button_back);
 
@@ -104,6 +96,7 @@ public class LoginLikesFragment extends Fragment {
         bBack.setOnClickListener(clicky);
 
         buttonGreekLife = (Button) root.findViewById(R.id.button1);
+        buttonGreekLife.setEnabled(false);
         buttonTech = (Button) root.findViewById(R.id.button2);
         buttonAcademics = (Button) root.findViewById(R.id.button3);
         buttonReligion = (Button) root.findViewById(R.id.button4);
@@ -123,15 +116,8 @@ public class LoginLikesFragment extends Fragment {
         return mOverlay;
     }
 
-    public void toggle(int check){
+    public void toggle(Button check){
 
-        if (picked.get(check) == Boolean.TRUE){
-
-            picked.get(check).equals(Boolean.FALSE);
-        }
-        else{
-            picked.get(check).equals(Boolean.TRUE);
-        }
 
     }
 
