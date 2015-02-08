@@ -28,4 +28,5 @@ dependencies {
     compile 'com.android.support:support-v13:21.0.3'
     compile 'com.parse.bolts:bolts-android:1.+'
     compile 'se.emilsjolander:stickylistheaders:+'
+    compile 'com.squareup.picasso:picasso:2.4.0'
 }

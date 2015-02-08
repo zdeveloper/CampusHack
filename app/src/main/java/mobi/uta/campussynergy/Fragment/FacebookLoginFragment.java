@@ -27,6 +27,7 @@ import com.parse.ParseObject;
 import java.util.Arrays;
 
 import mobi.uta.campussynergy.Activity.MainActivity;
+import mobi.uta.campussynergy.DataModel.Preferences;
 import mobi.uta.campussynergy.R;
 
 /**
@@ -138,7 +139,7 @@ public class FacebookLoginFragment extends Fragment implements View.OnClickListe
                                         graphObject.getProperty("id"));
                             }
                         }
-                        SharedPreferences prefs = getActivity().getPreferences(Context.MODE_PRIVATE);
+                        SharedPreferences prefs = getActivity().getSharedPreferences(Preferences.pref_file, Context.MODE_PRIVATE);
                         SharedPreferences.Editor editor = prefs.edit();
                         editor.putString(getResources().getString(R.string.pref_facebook_id), s);
                         editor.commit();

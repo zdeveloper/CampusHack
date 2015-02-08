@@ -3,6 +3,9 @@ package mobi.uta.campussynergy.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -22,11 +25,16 @@ import com.parse.GetCallback;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
+import com.squareup.picasso.Picasso;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.HttpURLConnection;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+
+import mobi.uta.campussynergy.DataModel.Preferences;
 import mobi.uta.campussynergy.R;
 
 /**
@@ -79,12 +87,12 @@ public class ViewActivity extends ActionBarActivity {
 
                 showLoading(true);
                 //event is database, ignore, else put in data base
-                SharedPreferences prefs = getPreferences(Context.MODE_PRIVATE);
+                SharedPreferences prefs = getSharedPreferences(Preferences.pref_file, Context.MODE_PRIVATE);
                 final String userId = prefs.getString(getResources().getString(R.string.pref_facebook_id), "TEST");
 
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("RSVP");
                 query.whereEqualTo("user_id", userId);
-                query.whereEqualTo("even_id", event.getObjectId()+"");
+                query.whereEqualTo("event_id", event.getObjectId().toString());
                 query.getFirstInBackground(new GetCallback<ParseObject>() {
                     @Override
                     public void done(ParseObject parseObject, com.parse.ParseException e) {
@@ -92,15 +100,17 @@ public class ViewActivity extends ActionBarActivity {
                             //ok so item not in database so add it
                             ParseObject rsvp = new ParseObject("RSVP");
                             rsvp.put("user_id", userId);
-                            rsvp.put("even_id", event.getObjectId()+"");
+                            rsvp.put("event_id", event.getObjectId().toString());
                             rsvp.saveInBackground(new SaveCallback() {
                                 @Override
                                 public void done(com.parse.ParseException e) {
-                                    addToCalendar();
+                                    //addToCalendar();
+                                    showLoading(false);
                                 }
                             });
                         } else {
-                            addToCalendar();
+                            //addToCalendar();
+                            showLoading(false);
                         }
                     }
                 });
@@ -119,7 +129,7 @@ public class ViewActivity extends ActionBarActivity {
     }
 
     void addToCalendar() {
-        showLoading(false);
+
         Calendar calendarStart = Calendar.getInstance();
         calendarStart.setTime(event.getDate("startDate"));
 
@@ -135,17 +145,6 @@ public class ViewActivity extends ActionBarActivity {
         intent.putExtra("eventLocation", event.getParseGeoPoint("location").getLatitude() + "," + event.getParseGeoPoint("location").getLongitude());
         startActivity(intent);
     }
-
-    public Drawable loadImageFromURL(String url, String name) {
-        try {
-            InputStream is = (InputStream) new URL(url).getContent();
-            Drawable d = Drawable.createFromStream(is, name);
-            return d;
-        } catch (Exception e) {
-            return null;
-        }
-    }
-
 
 
     void displayEvent(final ParseObject event) {
@@ -170,7 +169,7 @@ public class ViewActivity extends ActionBarActivity {
         hour.setText(sdf.format(event.getDate("startDate").getTime()) + " - " + sdf.format(event.getDate("endDate").getTime()) + "\n" + sdf2.format(event.getDate("startDate").getTime()));
 
         //get image
-        cover.setImageDrawable(loadImageFromURL(event.getString("img_url") , event.getObjectId()));
+        Picasso.with(context).load(event.getString("img_url")).into(cover);
 
     }
 }

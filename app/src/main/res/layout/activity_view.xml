@@ -13,7 +13,9 @@
             android:id="@+id/activity_view_description_cover"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:maxHeight="150dp"
+            android:maxHeight="100dp"
+            android:scaleType="center"
+            android:adjustViewBounds="true"
             android:src="@drawable/ic_launcher" />
 
         <FrameLayout
