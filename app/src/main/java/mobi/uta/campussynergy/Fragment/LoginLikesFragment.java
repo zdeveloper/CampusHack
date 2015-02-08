@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.Button;
 
 import java.util.ArrayList;
 
@@ -22,7 +22,7 @@ import mobi.uta.campussynergy.R;
 public class LoginLikesFragment extends Fragment {
 
     ArrayList<Boolean> picked;
-    ImageButton buttonGreekLife, buttonTech, buttonAcademics, buttonReligion, buttonStudyGroups, buttonMusic;
+    Button buttonGreekLife, buttonTech, buttonAcademics, buttonReligion, buttonStudyGroups, buttonMusic;
     View mOverlay;
     private Context context;
 
@@ -105,12 +105,12 @@ public class LoginLikesFragment extends Fragment {
         bNext.setOnClickListener(clicky);
         bBack.setOnClickListener(clicky);
 
-        buttonGreekLife = (ImageButton) root.findViewById(R.id.button1);
-        buttonTech = (ImageButton) root.findViewById(R.id.button2);
-        buttonAcademics = (ImageButton) root.findViewById(R.id.button3);
-        buttonReligion = (ImageButton) root.findViewById(R.id.button4);
-        buttonStudyGroups = (ImageButton) root.findViewById(R.id.button5);
-        buttonMusic = (ImageButton) root.findViewById(R.id.button6);
+        buttonGreekLife = (Button) root.findViewById(R.id.button1);
+        buttonTech = (Button) root.findViewById(R.id.button2);
+        buttonAcademics = (Button) root.findViewById(R.id.button3);
+        buttonReligion = (Button) root.findViewById(R.id.button4);
+        buttonStudyGroups = (Button) root.findViewById(R.id.button5);
+        buttonMusic = (Button) root.findViewById(R.id.button6);
 
         buttonGreekLife.setOnClickListener(clicky);
         buttonTech.setOnClickListener(clicky);

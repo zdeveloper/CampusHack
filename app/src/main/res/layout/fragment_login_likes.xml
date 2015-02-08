@@ -32,26 +32,41 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="@dimen/activity_horizontal_margin"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                    android:paddingTop="@dimen/selection_horizontal_margin"
+                    android:paddingBottom="@dimen/selection_horizontal_margin">
 
-                    <ImageButton android:id="@+id/button1"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    University
+                    -->
+                    <Button android:id="@+id/button1"
+                        android:drawableTop="@drawable/school"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="University"/>
 
-                    <ImageButton android:id="@+id/button2"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Greek Life
+                    -->
+                    <Button android:id="@+id/button2"
+                        android:drawableTop="@drawable/bank"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Greek Life"/>
 
-                    <ImageButton android:id="@+id/button3"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Study Groups
+                    -->
+                    <Button android:id="@+id/button3"
+                        android:drawableTop="@drawable/account_multiple"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Study Groups"/>
 
                 </LinearLayout>
 
@@ -59,25 +74,40 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                    android:paddingBottom="@dimen/selection_horizontal_margin">
 
-                    <ImageButton android:id="@+id/button4"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Religion
+                    -->
+                    <Button android:id="@+id/button4"
+                        android:drawableTop="@drawable/library"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Religion"/>
 
-                    <ImageButton android:id="@+id/button5"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Disabilities
+                    -->
+                    <Button android:id="@+id/button5"
+                        android:drawableTop="@drawable/wheelchair_accessibility"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Disabilities"/>
 
-                    <ImageButton android:id="@+id/button6"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Technology
+                    -->
+                    <Button android:id="@+id/button6"
+                        android:drawableTop="@drawable/cellphone_link"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Technology"/>
 
                 </LinearLayout>
 
@@ -85,25 +115,40 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                    android:paddingBottom="@dimen/selection_horizontal_margin">
 
-                    <ImageButton android:id="@+id/button7"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Music
+                    -->
+                    <Button android:id="@+id/button7"
+                        android:drawableTop="@drawable/music_box"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Music"/>
 
-                    <ImageButton android:id="@+id/button8"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Arts
+                    -->
+                    <Button android:id="@+id/button8"
+                        android:drawableTop="@drawable/brush"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Arts"/>
 
-                    <ImageButton android:id="@+id/button9"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Sports
+                    -->
+                    <Button android:id="@+id/button9"
+                        android:drawableTop="@drawable/dribbble"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Sports"/>
 
                 </LinearLayout>
 
@@ -111,25 +156,40 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingBottom="@dimen/activity_horizontal_margin">
+                    android:paddingBottom="@dimen/selection_horizontal_margin">
 
-                    <ImageButton android:id="@+id/button10"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Workshops
+                    -->
+                    <Button android:id="@+id/button10"
+                        android:drawableTop="@drawable/presentation"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Workshops"/>
 
-                    <ImageButton android:id="@+id/button11"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Meetups
+                    -->
+                    <Button android:id="@+id/button11"
+                        android:drawableTop="@drawable/human_male_female"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Meetups"/>
 
-                    <ImageButton android:id="@+id/button12"
-                        android:src="@drawable/ic_launcher"
+                    <!--
+                    Diversity
+                    -->
+                    <Button android:id="@+id/button12"
+                        android:drawableTop="@drawable/duck"
                         android:layout_width="0dp"
                         android:layout_weight="1"
-                        android:layout_height="match_parent"/>
+                        android:layout_height="match_parent"
+                        android:background="@android:color/white"
+                        android:text="Diversity"/>
 
                 </LinearLayout>
 
