@@ -3,16 +3,15 @@ package mobi.uta.campussynergy.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -24,13 +23,10 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
-import java.text.ParseException;
+import java.io.InputStream;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-
-import mobi.uta.campussynergy.DataModel.Event;
-import mobi.uta.campussynergy.DataModel.Preferences;
-import mobi.uta.campussynergy.Fragment.MapViewFragment;
 import mobi.uta.campussynergy.R;
 
 /**
@@ -59,7 +55,8 @@ public class ViewActivity extends ActionBarActivity {
 
                 if (e == null) {
                     // object will be your game score
-                    displayEvent(event = parseObject);
+                    event = parseObject;
+                    displayEvent( parseObject);
                     goingBtn.setVisibility(View.VISIBLE);
                 } else {
                     // something went wrong
@@ -75,7 +72,6 @@ public class ViewActivity extends ActionBarActivity {
         cover = (ImageView) findViewById(R.id.activity_view_description_cover);
         goingBtn = (Button) findViewById(R.id.activity_view_goingbtn);
 
-
         goingBtn.setVisibility(View.GONE);
         goingBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,15 +84,15 @@ public class ViewActivity extends ActionBarActivity {
 
                 ParseQuery<ParseObject> query = ParseQuery.getQuery("RSVP");
                 query.whereEqualTo("user_id", userId);
-                query.whereEqualTo("even_id", event.getObjectId());
+                query.whereEqualTo("even_id", event.getObjectId()+"");
                 query.getFirstInBackground(new GetCallback<ParseObject>() {
                     @Override
                     public void done(ParseObject parseObject, com.parse.ParseException e) {
-                        if(e != null){
+                        if (e != null) {
                             //ok so item not in database so add it
                             ParseObject rsvp = new ParseObject("RSVP");
                             rsvp.put("user_id", userId);
-                            rsvp.put("even_id", event.getObjectId());
+                            rsvp.put("even_id", event.getObjectId()+"");
                             rsvp.saveInBackground(new SaveCallback() {
                                 @Override
                                 public void done(com.parse.ParseException e) {
@@ -113,16 +109,16 @@ public class ViewActivity extends ActionBarActivity {
     }
 
 
-    void showLoading(boolean val){
+    void showLoading(boolean val) {
         goingBtn.setEnabled(!val);
-        if(val) {
+        if (val) {
             goingBtn.setText("Loading...");
         } else {
             goingBtn.setText("Going");
         }
     }
 
-    void addToCalendar(){
+    void addToCalendar() {
         showLoading(false);
         Calendar calendarStart = Calendar.getInstance();
         calendarStart.setTime(event.getDate("startDate"));
@@ -133,12 +129,24 @@ public class ViewActivity extends ActionBarActivity {
         Intent intent = new Intent(Intent.ACTION_EDIT);
         intent.setType("vnd.android.cursor.item/event");
         intent.putExtra("beginTime", calendarStart.getTimeInMillis());
-        intent.putExtra("endTime",  calendarEnd.getTimeInMillis() );
+        intent.putExtra("endTime", calendarEnd.getTimeInMillis());
         intent.putExtra("title", event.getString("title"));
-        intent.putExtra("description", event.getString("description") );
-        intent.putExtra("eventLocation", event.getParseGeoPoint("location").getLatitude()+","+event.getParseGeoPoint("location").getLongitude());
+        intent.putExtra("description", event.getString("description"));
+        intent.putExtra("eventLocation", event.getParseGeoPoint("location").getLatitude() + "," + event.getParseGeoPoint("location").getLongitude());
         startActivity(intent);
     }
+
+    public Drawable loadImageFromURL(String url, String name) {
+        try {
+            InputStream is = (InputStream) new URL(url).getContent();
+            Drawable d = Drawable.createFromStream(is, name);
+            return d;
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+
 
     void displayEvent(final ParseObject event) {
         ((MapFragment) getFragmentManager().findFragmentById(R.id.activity_view_map)).getMapAsync(new OnMapReadyCallback() {
@@ -153,11 +161,16 @@ public class ViewActivity extends ActionBarActivity {
             }
         });
 
+
         //setData
         title.setText(event.getString("title"));
         description.setText(event.getString("description"));
         SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
         SimpleDateFormat sdf2 = new SimpleDateFormat("MM-dd-yyyy");
-        hour.setText(sdf.format(event.getDate("startDate").getTime()) + " - " + sdf.format(event.getDate("endDate").getTime()) + "\n"+ sdf2.format(event.getDate("startDate").getTime()));
+        hour.setText(sdf.format(event.getDate("startDate").getTime()) + " - " + sdf.format(event.getDate("endDate").getTime()) + "\n" + sdf2.format(event.getDate("startDate").getTime()));
+
+        //get image
+        cover.setImageDrawable(loadImageFromURL(event.getString("img_url") , event.getObjectId()));
+
     }
 }

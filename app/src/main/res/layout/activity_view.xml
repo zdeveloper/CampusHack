@@ -13,6 +13,7 @@
             android:id="@+id/activity_view_description_cover"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:maxHeight="150dp"
             android:src="@drawable/ic_launcher" />
 
         <FrameLayout
@@ -56,7 +57,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="DESCRIPTION"
-            android:textSize="22dp" />
+            android:textSize="18dp" />
 
         <LinearLayout
             android:layout_width="fill_parent"
