@@ -10,23 +10,42 @@
         android:layout_weight="1"
         android:padding="@dimen/activity_horizontal_margin">
 
-        <TextView
-            android:layout_width="wrap_content"
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView2" />
+            android:paddingTop="128dp"
+            android:id="@+id/state_list"
+            />
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_height="@dimen/activity_horizontal_margin"
+            android:text="State"/>
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView3" />
+            android:paddingTop="64dp"
+            android:id="@+id/school_list"
+            />
 
         <TextView
             android:layout_width="wrap_content"
+            android:layout_height="@dimen/activity_horizontal_margin"
+            android:text="University"/>
+
+        <AutoCompleteTextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="New Text"
-            android:id="@+id/textView4" />
+            android:paddingTop="64dp"
+            android:id="@+id/major_list"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/activity_horizontal_margin"
+            android:text="Major"/>
 
     </LinearLayout>
 
@@ -43,10 +62,7 @@
             style="@style/LoginInfoButton"
             android:id="@+id/button_back" />
 
-        <View
-            android:layout_width="1dp"
-            android:layout_height="fill_parent"
-            android:background="@color/divider" />
+
 
         <Button
             android:layout_width="0dp"
