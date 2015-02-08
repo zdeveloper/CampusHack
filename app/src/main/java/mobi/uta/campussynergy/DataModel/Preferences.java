@@ -8,6 +8,7 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 /**
@@ -38,8 +39,14 @@ public class Preferences {
                     event.setImg_url(object.getString("img_url"));
                     event.setType(object.getString("type"));
                     event.setFb_page(object.getString("pageColor"));
-                    event.setStartTime(object.getDate("startDate"));
-                    event.setEndTime(object.getDate("endDate"));
+
+                    Calendar calendarStart = Calendar.getInstance();
+                    calendarStart.setTime(object.getDate("startDate"));
+                    event.setStartCal(calendarStart);
+
+                    Calendar calendarEnd = Calendar.getInstance();
+                    calendarEnd.setTime(object.getDate("endDate"));
+                    event.setEndCal(calendarEnd);
 
                     eventList.add(event);
                     Log.d("DEBUG", "EVENT: " + event.getTitle() + " - DESCRIPTION: " + event.getDesctiption());

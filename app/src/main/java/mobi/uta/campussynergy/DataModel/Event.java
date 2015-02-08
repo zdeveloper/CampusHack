@@ -1,5 +1,6 @@
 package mobi.uta.campussynergy.DataModel;
 
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -8,7 +9,23 @@ import java.util.Date;
 public class Event {
     String title, desctiption, fb_author, fb_page, type, img_url, pg_color;
     long header;
-    Date startTime, endTime;
+    Calendar startCal, endCal;
+
+    public Calendar getEndCal() {
+        return endCal;
+    }
+
+    public void setEndCal(Calendar endCal) {
+        this.endCal = endCal;
+    }
+
+    public Calendar getStartCal() {
+        return startCal;
+    }
+
+    public void setStartCal(Calendar startCal) {
+        this.startCal = startCal;
+    }
 
     public long getHeaderId() {
         return header;
@@ -16,14 +33,6 @@ public class Event {
 
     public void setHeaderId(long headerid) {
         this.header = header;
-    }
-
-    public Date getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
     }
 
     public String getTitle() {
@@ -82,11 +91,5 @@ public class Event {
         this.pg_color = pg_color;
     }
 
-    public Date getEndTime() {
-        return endTime;
-    }
 
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
 }

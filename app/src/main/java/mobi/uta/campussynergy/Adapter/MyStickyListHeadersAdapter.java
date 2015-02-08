@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import mobi.uta.campussynergy.DataModel.Event;
@@ -23,6 +24,7 @@ public class MyStickyListHeadersAdapter extends BaseAdapter implements StickyLis
 
     private ArrayList<Event> events;
     private LayoutInflater inflater;
+    private static int counter = 0;
 
     public MyStickyListHeadersAdapter(Context context, ArrayList<Event> events) {
         inflater = LayoutInflater.from(context);
@@ -62,7 +64,7 @@ public class MyStickyListHeadersAdapter extends BaseAdapter implements StickyLis
         //SimpleDateFormat sdf = new SimpleDateFormat("h:mm a");
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm");
 
-        holder.time.setText(sdf.format(events.get(position).getStartTime()) + " - " + sdf.format(events.get(position).getEndTime()));
+        holder.time.setText(sdf.format(events.get(position).getStartCal().getTime()) + " - " + sdf.format(events.get(position).getStartCal().getTime()));
 
         return convertView;
     }
@@ -80,35 +82,38 @@ public class MyStickyListHeadersAdapter extends BaseAdapter implements StickyLis
         }
         //set header text as first char in name
         Date today = new Date();
-        Date tommorrow = new Date();
-        tommorrow.setDate( today.getDate() + 1);
+        Calendar rightNow = Calendar.getInstance();
 
-        Date future = new Date();
-        future.setDate( tommorrow.getDate() + 1);
+        Calendar tomorrow = Calendar.getInstance();
+        tomorrow.set(Calendar.DAY_OF_MONTH, tomorrow.get(Calendar.DAY_OF_MONTH) + 1);
 
+        Calendar future = Calendar.getInstance();
+        future.set(Calendar.DAY_OF_MONTH, tomorrow.get(Calendar.DAY_OF_MONTH) + 2);
 
-        Log.d( "DEBUG", "Today: " + today.toString() + " \nTomorrow " + tommorrow.toString() + " \nFuture " + future.toString());
 
         String headerText;
         long headerId;
-        if(events.get(position).getStartTime().before(today) == true){
+        if (counter == 0) {
+            //if(events.get(position).getStartCal().compareTo(tomorrow) < 0){
             //put on today
             headerText = "TODAY";
             headerId = 0;
             Log.d("Tag", "Setting it to today");
 
-        } else if(events.get(position).getStartTime().before(tommorrow) == true){
+        } else if (counter == 1) {
+            //} else if(events.get(position).getStartCal().compareTo(tomorrow) >=0 && events.get(position).getStartCal().compareTo(future) <0){
             //put on tomorrow
             headerText = "TOMORROW";
-            headerId =1;
+            headerId = 1;
             Log.d("Tag", "Setting it to TOMORROW");
         } else {
             // put on future
             headerText = "FUTURE";
-            headerId =2;
+            headerId = 2;
             Log.d("Tag", "Setting it to FUTURE");
         }
 
+        counter++;
         events.get(position).setHeaderId(headerId);
         holder.text.setText(headerText);
         return convertView;
