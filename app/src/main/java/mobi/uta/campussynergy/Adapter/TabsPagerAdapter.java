@@ -4,9 +4,8 @@ import android.app.Fragment;
 import android.app.FragmentManager;
 import android.support.v13.app.FragmentStatePagerAdapter;
 
-import mobi.uta.campussynergy.Fragment.MapViewFragment;
+import mobi.uta.campussynergy.Fragment.EventListFragment;
 import mobi.uta.campussynergy.Fragment.RecomendedFragment;
-import mobi.uta.campussynergy.Fragment.ViewEventFragment;
 import mobi.uta.campussynergy.Fragment.ViewPageFragment;
 
 /**
@@ -25,7 +24,7 @@ public class TabsPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 return new RecomendedFragment();
             case 1:
-                return new ViewEventFragment();
+                return new EventListFragment();
             case 2:
                 return new ViewPageFragment();
         }

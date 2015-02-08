@@ -14,7 +14,7 @@ import java.util.List;
  * Created by zedd on 2/7/15.
  */
 public class Preferences {
-    private static ArrayList<Event> eventList = new ArrayList<>();
+    private ArrayList<Event> eventList = new ArrayList<>();
 
     public Preferences(){
         queryParseForEvents();

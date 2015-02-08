@@ -2,24 +2,14 @@ package mobi.uta.campussynergy.Activity;
 
 import android.content.Intent;
 
-
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-
-import java.util.List;
-
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
-import mobi.uta.campussynergy.DataModel.Event;
 import mobi.uta.campussynergy.DataModel.Preferences;
 import mobi.uta.campussynergy.Fragment.LoginLikesFragment;
 import mobi.uta.campussynergy.Fragment.RecomendedFragment;
@@ -77,7 +67,6 @@ public class MainActivity extends ActionBarActivity implements
                 // make respected tab selected
                 actionBar.setSelectedNavigationItem(position);
             }
-
             @Override
             public void onPageScrolled(int arg0, float arg1, int arg2) {
             }

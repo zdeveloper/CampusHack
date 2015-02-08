@@ -7,7 +7,16 @@ import java.util.Date;
  */
 public class Event {
     String title, desctiption, fb_author, fb_page, type, img_url, pg_color;
+    long header;
     Date startTime, endTime;
+
+    public long getHeaderId() {
+        return header;
+    }
+
+    public void setHeaderId(long headerid) {
+        this.header = header;
+    }
 
     public Date getStartTime() {
         return startTime;
