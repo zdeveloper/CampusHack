@@ -16,7 +16,15 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+
+import java.util.List;
+
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
+import mobi.uta.campussynergy.DataModel.Event;
 import mobi.uta.campussynergy.Fragment.LoginLikesFragment;
 import mobi.uta.campussynergy.Fragment.RecomendedFragment;
 import mobi.uta.campussynergy.R;
@@ -123,4 +131,30 @@ public class MainActivity extends ActionBarActivity implements
     public void onTabReselected(ActionBar.Tab tab, android.support.v4.app.FragmentTransaction fragmentTransaction) {
 
     }
+
+    void queryParseForEvents(){
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Events");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> parseObjects, ParseException e) {
+                for(ParseObject object : parseObjects)
+                {
+                    Event event = new Event();
+                    event.setTitle(object.getString("title"));
+                    event.setDesctiption(object.getString("description"));
+                    event.setFb_author(object.getString("fb_author"));
+                    event.setFb_page(object.getString("fb_page"));
+                    event.setImg_url(object.getString("img_url"));
+                    event.setType(object.getString("type"));
+                    event.setFb_page(object.getString("pageColor"));
+                    event.setStartTime(object.getDate("startDate"));
+                    event.setEndTime(object.getDate("endDate"));
+
+                    Log.d("DEBUG", "EVENT: " + event.getTitle() + " - DESCRIPTION: " + event.getDesctiption());
+                }
+
+            }
+        });
+    }
+
 }
