@@ -5,11 +5,20 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.parse.ParseObject;
+import com.sromku.simple.fb.Permission;
+import com.sromku.simple.fb.SimpleFacebook;
+import com.sromku.simple.fb.SimpleFacebookConfiguration;
+import com.sromku.simple.fb.entities.Profile;
+import com.sromku.simple.fb.listeners.OnFriendsListener;
+import com.sromku.simple.fb.listeners.OnLoginListener;
+
+import java.util.List;
 
 import mobi.uta.campussynergy.Adapter.TabsPagerAdapter;
 import mobi.uta.campussynergy.DataModel.Preferences;
@@ -29,8 +38,10 @@ public class MainActivity extends ActionBarActivity implements
     public static Preferences preferences;
     private static final int CODE_QR = 289;
 
+    SimpleFacebook mSimpleFacebook;
+
     // Tab titles
-    private String[] tabs = {"Recommended", "Main", "Friends"};
+    private String[] tabs = {"All", "Recommended", "Friends"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +91,25 @@ public class MainActivity extends ActionBarActivity implements
         });
 
         viewPager.setCurrentItem(1);
+
+
+
+
+        //FACEBOOK STUFF
+
+        Permission[] permissions = new Permission[] {
+                Permission.USER_FRIENDS,
+                Permission.EMAIL,
+                Permission.USER_ABOUT_ME
+        };
+
+        SimpleFacebookConfiguration configuration = new SimpleFacebookConfiguration.Builder()
+                .setAppId("1521984621398779")
+                .setNamespace("mobicampus")
+                .setPermissions(permissions)
+                .build();
+        SimpleFacebook.setConfiguration(configuration);
+
     }
 
     @Override
@@ -111,6 +141,8 @@ public class MainActivity extends ActionBarActivity implements
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent intent) {
+        mSimpleFacebook.onActivityResult(this, requestCode, resultCode, intent);
+
         if (requestCode == CODE_QR) {
             if (resultCode == RESULT_OK) {
 
@@ -139,6 +171,56 @@ public class MainActivity extends ActionBarActivity implements
 
     }
 
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mSimpleFacebook = SimpleFacebook.getInstance(this);
+        mSimpleFacebook.login(onLoginListener);
+    }
+
+    OnLoginListener onLoginListener = new OnLoginListener() {
+        @Override
+        public void onLogin() {
+            // change the state of the button or do whatever you want
+            Log.i("debug", "Logged in");
+            mSimpleFacebook.getFriends(onFriendsListener);
+        }
+
+        @Override
+        public void onNotAcceptingPermissions(Permission.Type type) {
+            // user didn't accept READ or WRITE permission
+            Log.w("debug", String.format("You didn't accept %s permissions", type.name()));
+        }
+
+        @Override
+        public void onThinking() {
+
+        }
+
+        @Override
+        public void onException(Throwable throwable) {
+
+        }
+
+        @Override
+        public void onFail(String s) {
+
+        }
+    };
+
+    OnFriendsListener onFriendsListener = new OnFriendsListener() {
+        @Override
+        public void onComplete(List<Profile> friends) {
+            Log.i("debug", "Number of friends = " + friends.size());
+            for(Profile friend : friends){
+
+                Log.i("debug", "Friend = " + friend.getId() + " - " + friend.getBio() );
+
+
+            }
+        }
+    };
 
 
 }

@@ -22,9 +22,9 @@ public class TabsPagerAdapter extends FragmentStatePagerAdapter {
 
         switch (index) {
             case 0:
-                return new RecomendedFragment();
-            case 1:
                 return new EventListFragment();
+            case 1:
+                return new RecomendedFragment();
             case 2:
                 return new FriendsFragment();
         }

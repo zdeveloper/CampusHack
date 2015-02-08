@@ -57,6 +57,7 @@ public class EventListFragment extends Fragment {
         return rootView;
     }
 
+
     void queryParseForEvents() {
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Events");
         query.findInBackground(new FindCallback<ParseObject>() {

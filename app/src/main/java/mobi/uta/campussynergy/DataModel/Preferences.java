@@ -20,7 +20,7 @@ public class Preferences {
     public static String pref_file = "MyPREFERENCES";
 
     public Preferences(){
-        queryParseForEvents();
+        //queryParseForEvents();
     }
 
     public ArrayList<Event> getEvent(){

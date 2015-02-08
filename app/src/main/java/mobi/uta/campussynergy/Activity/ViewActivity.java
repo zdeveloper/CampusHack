@@ -11,10 +11,12 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.gc.materialdesign.views.CheckBox;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
@@ -45,8 +47,9 @@ public class ViewActivity extends ActionBarActivity {
     public static final String EVENT_ID = "EventIndex";
 
     TextView title, description, hour;
+    ImageButton addToCalender;
     ImageView cover;
-    Button goingBtn;
+    CheckBox goingBtn;
     Context context;
 
     ParseObject event;
@@ -63,8 +66,8 @@ public class ViewActivity extends ActionBarActivity {
                 if (e == null) {
                     // object will be your game score
                     event = parseObject;
-                    displayEvent( parseObject);
-                    goingBtn.setVisibility(View.VISIBLE);
+                    displayEvent(parseObject);
+                    checkForGoing();
                 } else {
                     // something went wrong
                     Toast.makeText(context, "Error", Toast.LENGTH_SHORT).show();
@@ -77,15 +80,19 @@ public class ViewActivity extends ActionBarActivity {
         description = (TextView) findViewById(R.id.activity_view_description);
         hour = (TextView) findViewById(R.id.activity_view_hours);
         cover = (ImageView) findViewById(R.id.activity_view_description_cover);
-        goingBtn = (Button) findViewById(R.id.activity_view_goingbtn);
+        goingBtn = (CheckBox) findViewById(R.id.activity_view_goingbtn);
+        addToCalender = (ImageButton) findViewById(R.id.activity_view_addToCalendar);
 
-        goingBtn.setVisibility(View.GONE);
-        goingBtn.setOnClickListener(new View.OnClickListener() {
+        addToCalender.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                addToCalendar();
+            }
+        });
 
-                showLoading(true);
-                //event is database, ignore, else put in data base
+        goingBtn.setOncheckListener(new CheckBox.OnCheckListener() {
+            @Override
+            public void onCheck(final boolean val) {
                 SharedPreferences prefs = getSharedPreferences(Preferences.pref_file, Context.MODE_PRIVATE);
                 final String userId = prefs.getString(getResources().getString(R.string.pref_facebook_id), "TEST");
 
@@ -95,21 +102,23 @@ public class ViewActivity extends ActionBarActivity {
                 query.getFirstInBackground(new GetCallback<ParseObject>() {
                     @Override
                     public void done(ParseObject parseObject, com.parse.ParseException e) {
-                        if (e != null) {
-                            //ok so item not in database so add it
-                            ParseObject rsvp = new ParseObject("RSVP");
-                            rsvp.put("user_id", userId);
-                            rsvp.put("event_id", event.getObjectId().toString());
-                            rsvp.saveInBackground(new SaveCallback() {
-                                @Override
-                                public void done(com.parse.ParseException e) {
-                                    //addToCalendar();
-                                    showLoading(false);
-                                }
-                            });
+                        if (e == null) {
+                            if (val == false) {
+                                //delete the object
+                                ParseObject rsvp = new ParseObject("RSVP");
+                                rsvp.put("user_id", userId);
+                                rsvp.put("event_id", event.getObjectId().toString());
+                                rsvp.deleteInBackground();
+                            }
+
                         } else {
-                            //addToCalendar();
-                            showLoading(false);
+                            if (val == true) {
+                                //ok so item not in database so add it
+                                ParseObject rsvp = new ParseObject("RSVP");
+                                rsvp.put("user_id", userId);
+                                rsvp.put("event_id", event.getObjectId().toString());
+                                rsvp.saveInBackground();
+                            }
                         }
                     }
                 });
@@ -117,14 +126,24 @@ public class ViewActivity extends ActionBarActivity {
         });
     }
 
+    void checkForGoing() {
 
-    void showLoading(boolean val) {
-        goingBtn.setEnabled(!val);
-        if (val) {
-            goingBtn.setText("Loading...");
-        } else {
-            goingBtn.setText("Going");
-        }
+        SharedPreferences prefs = getSharedPreferences(Preferences.pref_file, Context.MODE_PRIVATE);
+        final String userId = prefs.getString(getResources().getString(R.string.pref_facebook_id), "TEST");
+
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("RSVP");
+        query.whereEqualTo("user_id", userId);
+        query.whereEqualTo("event_id", event.getObjectId().toString());
+        query.getFirstInBackground(new GetCallback<ParseObject>() {
+            @Override
+            public void done(ParseObject parseObject, com.parse.ParseException e) {
+                if (e != null) {
+                    goingBtn.setChecked(false);
+                } else {
+                    goingBtn.setChecked(true);
+                }
+            }
+        });
     }
 
     void addToCalendar() {
