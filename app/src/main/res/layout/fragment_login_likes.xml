@@ -37,7 +37,7 @@
                     University
                     -->
                     <ToggleButton android:id="@+id/button1"
-                        android:drawableTop="@drawable/ic_school_black_48dp"
+                        android:drawableTop="@drawable/ic_school_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -49,7 +49,7 @@
                     Greek Life
                     -->
                     <ToggleButton android:id="@+id/button2"
-                        android:drawableTop="@drawable/ic_bank_black_48dp"
+                        android:drawableTop="@drawable/ic_bank_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -63,7 +63,7 @@
                     Study Groups
                     -->
                     <ToggleButton android:id="@+id/button3"
-                        android:drawableTop="@drawable/ic_account_multiple_black_48dp"
+                        android:drawableTop="@drawable/ic_account_multiple_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -82,7 +82,7 @@
                     Religion
                     -->
                     <ToggleButton android:id="@+id/button4"
-                        android:drawableTop="@drawable/ic_library_black_48dp"
+                        android:drawableTop="@drawable/ic_library_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -94,7 +94,7 @@
                     Disabilities
                     -->
                     <ToggleButton android:id="@+id/button5"
-                        android:drawableTop="@drawable/ic_wheelchair_accessibility_black_48dp"
+                        android:drawableTop="@drawable/ic_wheelchair_accessibility_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -108,7 +108,7 @@
                     Technology
                     -->
                     <ToggleButton android:id="@+id/button6"
-                        android:drawableTop="@drawable/ic_cellphone_link_black_48dp"
+                        android:drawableTop="@drawable/ic_cellphone_link_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -127,7 +127,7 @@
                     Music
                     -->
                     <ToggleButton android:id="@+id/button7"
-                        android:drawableTop="@drawable/ic_music_box_black_48dp"
+                        android:drawableTop="@drawable/ic_music_box_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -139,7 +139,7 @@
                     Arts
                     -->
                     <ToggleButton android:id="@+id/button8"
-                        android:drawableTop="@drawable/ic_brush_black_48dp"
+                        android:drawableTop="@drawable/ic_brush_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -153,7 +153,7 @@
                     Sports
                     -->
                     <ToggleButton android:id="@+id/button9"
-                        android:drawableTop="@drawable/ic_dribbble_black_48dp"
+                        android:drawableTop="@drawable/ic_dribbble_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -172,7 +172,7 @@
                     Workshops
                     -->
                     <ToggleButton android:id="@+id/button10"
-                        android:drawableTop="@drawable/ic_presentation_black_48dp"
+                        android:drawableTop="@drawable/ic_presentation_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -184,7 +184,7 @@
                     Meetups
                     -->
                     <ToggleButton android:id="@+id/button11"
-                        android:drawableTop="@drawable/ic_human_male_female_black_48dp"
+                        android:drawableTop="@drawable/ic_human_male_female_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
@@ -198,7 +198,7 @@
                     Diversity
                     -->
                     <ToggleButton android:id="@+id/button12"
-                        android:drawableTop="@drawable/ic_duck_black_48dp"
+                        android:drawableTop="@drawable/ic_duck_white_48dp"
                         android:layout_width="0dp"
                         android:layout_weight="1"
                         android:layout_height="match_parent"
